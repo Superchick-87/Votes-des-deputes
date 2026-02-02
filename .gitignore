@@ -1,0 +1,5 @@
+# --- Base de données (Fichiers volumineux) ---
+# Ignore le fichier qui bloque le push sur GitHub
+data/assemblee.sqlite
+*.sqlite
+*.db
