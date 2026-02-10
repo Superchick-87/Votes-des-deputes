@@ -1,115 +1,203 @@
 // js/scrutin.js - Logique spécifique à la page de détail d'un scrutin
 
+// --- 0. UTILITAIRE : Gestion des couleurs (Contraste) ---
+function getTextColor(hex) {
+    if (!hex) return '#000000';
+    hex = hex.replace('#', '');
+    if (hex.length === 3) {
+        hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2];
+    }
+    var r = parseInt(hex.substring(0, 2), 16);
+    var g = parseInt(hex.substring(2, 4), 16);
+    var b = parseInt(hex.substring(4, 6), 16);
+    var yiq = ((r * 299) + (g * 587) + (b * 114)) / 1000;
+    return (yiq >= 160) ? '#000000' : '#FFFFFF';
+}
+
 // --- 1. UI : Plier/Déplier ---
 function toggleChart() {
     var chart = document.getElementById('chart-section');
     var btn = document.getElementById('btn-toggle-chart');
-    
+
     if (chart.style.display === 'none') {
         chart.style.display = 'block';
-        chart.style.opacity = 0;
-        setTimeout(() => { 
-            chart.style.transition = 'opacity 0.3s';
-            chart.style.opacity = 1; 
-        }, 10);
+        void chart.offsetWidth;
+        chart.style.opacity = 1;
         btn.innerHTML = 'Masquer le graphique ▲';
     } else {
-        chart.style.display = 'none';
+        chart.style.opacity = 0;
+        setTimeout(() => { chart.style.display = 'none'; }, 300);
         btn.innerHTML = 'Afficher le graphique ▼';
     }
 }
 
 // --- 2. Graphique Animé ---
 function updateChart(voteType) {
-    // window.chartDataGlobal est défini dans le PHP
-    var chartData = window.chartDataGlobal; 
+    var chartData = window.chartDataGlobal;
+    var container = document.getElementById('chart-bars-container');
 
-    // Gestion du Titre
+    // Mise à jour du titre
     var labelText = '';
     if (voteType === 'all') {
-        labelText = 'TOUS'; 
+        labelText = 'TOUS (Répartition proportionnelle)';
     } else {
-        var labelMap = {'Pour': 'POUR ✅', 'Contre': 'CONTRE ❌', 'Abstention': 'ABSTENTION ⚠️'};
+        var labelMap = { 'Pour': 'POUR ✅', 'Contre': 'CONTRE ❌', 'Abstention': 'ABSTENTION ⚠️' };
         labelText = labelMap[voteType] || voteType;
     }
     document.getElementById('chart-vote-type').innerText = labelText;
 
-    var container = document.getElementById('chart-bars-container');
-    container.innerHTML = ''; 
+    if (!container) return;
+    container.innerHTML = '';
 
-    // Config Données
     var isAll = (voteType === 'all');
-    var maxVal = 0;
 
-    // Calcul Max
-    Object.keys(chartData).forEach(function(key) {
+    // --- ETAPE 1 : Trouver l'échelle de référence ---
+    // En vue globale, l'échelle est déterminée par le groupe qui a le plus de membres (total_membres).
+    // En vue filtrée, l'échelle reste basée sur le nombre de votes maximum dans la catégorie choisie.
+    var maxReference = 0;
+
+    Object.keys(chartData).forEach(function (key) {
         var data = chartData[key];
-        var total = isAll 
-            ? (data.stats['Pour'] + data.stats['Contre'] + data.stats['Abstention'])
-            : data.stats[voteType];
-        if(total > maxVal) maxVal = total;
+        var val = 0;
+        if (isAll) {
+            // On prend le total théorique (membres du groupe) comme référence
+            val = parseInt(data.total_membres) || 0;
+        } else {
+            val = data.stats[voteType] || 0;
+        }
+        if (val > maxReference) maxReference = val;
     });
 
-    if(maxVal === 0) {
-        container.innerHTML = '<div style="text-align:center;color:#999;padding:15px;">Aucune donnée</div>';
+    if (maxReference === 0) {
+        container.innerHTML = '<div style="text-align:center;color:#999;padding:15px;">Aucune donnée pour ce filtre</div>';
         return;
     }
 
-    // Tri
-    var sortedKeys = Object.keys(chartData).sort(function(a, b) {
-        var valA = isAll 
-            ? (chartData[a].stats['Pour'] + chartData[a].stats['Contre'] + chartData[a].stats['Abstention'])
-            : chartData[a].stats[voteType];
-        var valB = isAll 
-            ? (chartData[b].stats['Pour'] + chartData[b].stats['Contre'] + chartData[b].stats['Abstention'])
-            : chartData[b].stats[voteType];
-        return valB - valA; 
+    // --- ETAPE 2 : Tri des données ---
+    var sortedKeys = Object.keys(chartData).sort(function (a, b) {
+        var valA = isAll ? (parseInt(chartData[a].total_membres) || 0) : chartData[a].stats[voteType];
+        var valB = isAll ? (parseInt(chartData[b].total_membres) || 0) : chartData[b].stats[voteType];
+        return valB - valA;
     });
 
-    // Affichage
-    sortedKeys.forEach(function(key) {
+    // --- ETAPE 3 : Génération ---
+    sortedKeys.forEach(function (key) {
         var data = chartData[key];
-        var vPour = data.stats['Pour'];
-        var vContre = data.stats['Contre'];
-        var vAbs = data.stats['Abstention'];
-        
-        var totalGrp = vPour + vContre + vAbs;
-        var valComparaison = isAll ? totalGrp : data.stats[voteType];
 
-        if(valComparaison > 0) {
+        var vPour = parseInt(data.stats['Pour']) || 0;
+        var vContre = parseInt(data.stats['Contre']) || 0;
+        var vAbs = parseInt(data.stats['Abstention']) || 0;
+
+        var totalGroupe = parseInt(data.total_membres) || 0;
+        var sumVotes = vPour + vContre + vAbs;
+
+        // Sécurité : si la base de données a un souci et que totalGroupe < votes, on ajuste
+        if (totalGroupe < sumVotes) totalGroupe = sumVotes;
+        if (totalGroupe === 0) totalGroupe = 1;
+
+        // Calcul des non-votants (C'est la nouvelle portion)
+        var vNonVotant = totalGroupe - sumVotes;
+
+        // Valeur à comparer pour savoir si on affiche la ligne (filtre actif)
+        var valComparaison = isAll ? totalGroupe : data.stats[voteType];
+
+        if (valComparaison > 0) {
             var row = document.createElement('div');
             row.className = 'chart-row';
-            var barHTML = '';
-            
+
             if (isAll) {
-                barHTML = `
-                    <div class="chart-bar-segment bg-pour" id="seg-p-${key}" title="Pour: ${vPour}" style="width:0%"></div>
-                    <div class="chart-bar-segment bg-contre" id="seg-c-${key}" title="Contre: ${vContre}" style="width:0%"></div>
-                    <div class="chart-bar-segment bg-abstention" id="seg-a-${key}" title="Abs: ${vAbs}" style="width:0%"></div>
+                // --- MODE VUE GLOBALE ---
+
+                // 1. Largeur de la BARRE ENTIÈRE par rapport à la page (maxReference)
+                // Si le groupe a 60 membres et le max est 120, la barre fera 50% de l'espace dispo.
+                var widthGlobal = (totalGroupe / maxReference * 100);
+
+                // 2. Largeur des SEGMENTS INTERNES (par rapport à la barre du groupe)
+                // La somme fait 100% de widthGlobal
+                var pP = (vPour / totalGroupe * 100);
+                var pC = (vContre / totalGroupe * 100);
+                var pA = (vAbs / totalGroupe * 100);
+                var pNV = (vNonVotant / totalGroupe * 100);
+
+                var displayTotal = sumVotes + ' / ' + totalGroupe;
+
+                // Construction HTML
+                // On utilise un conteneur flex aligné à gauche
+                row.innerHTML = `
+                    <div class="chart-label" title="${data.nom}">${data.nom}</div>
+                    
+                    <div class="chart-track" style="width: 100%; display:flex; align-items:center;">
+                        <div class="chart-bar-container" style="width:${widthGlobal}%; height:20px; display:flex; border-radius:4px; overflow:hidden;">
+                            
+                            <div class="chart-bar-segment" 
+                                 style="width:0%; background-color:#27ae60; transition:width 0.5s ease;" 
+                                 data-target="${pP}" title="Pour: ${vPour}"></div>
+                            
+                            <div class="chart-bar-segment" 
+                                 style="width:0%; background-color:#c0392b; transition:width 0.5s ease;" 
+                                 data-target="${pC}" title="Contre: ${vContre}"></div>
+                            
+                            <div class="chart-bar-segment" 
+                                 style="width:0%; background-color:#f1c40f; transition:width 0.5s ease;" 
+                                 data-target="${pA}" title="Abstention: ${vAbs}"></div>
+                            
+                            <div class="chart-bar-segment" 
+                                 style="width:0%; background-color:#bdc3c7; transition:width 0.5s ease;" 
+                                 data-target="${pNV}" title="Non-Votants / Absents: ${vNonVotant}"></div>
+                        </div>
+                        
+                        </div>
+                    
+                    <div class="chart-value" style="width: 80px; text-align:right; font-weight:bold;">${displayTotal}</div>
                 `;
+
             } else {
+                // --- MODE FILTRÉ (Classique) ---
                 var bgCol = (data.couleur && data.couleur.length > 2) ? data.couleur : '#999';
-                barHTML = `<div class="chart-bar-fill" id="bar-${key}" style="width: 0%; background-color: ${bgCol};"></div>`;
-            }
+                var pVal = (valComparaison / maxReference * 100);
+                var displayStat = valComparaison + ' / ' + totalGroupe;
 
-            row.innerHTML = `
-                <div class="chart-label" title="${data.nom}">${data.nom}</div>
-                <div class="chart-bar-area">${barHTML}</div>
-                <div class="chart-value">${valComparaison}</div>
-            `;
-            container.appendChild(row);
+                // Logique d'affichage du texte à l'intérieur ou extérieur
+                var threshold = 15;
+                var isInside = (pVal >= threshold);
+                var barHTML = '';
 
-            setTimeout(function() {
-                if(isAll) {
-                    if(document.getElementById('seg-p-'+key)) document.getElementById('seg-p-'+key).style.width = (vPour / maxVal * 100) + '%';
-                    if(document.getElementById('seg-c-'+key)) document.getElementById('seg-c-'+key).style.width = (vContre / maxVal * 100) + '%';
-                    if(document.getElementById('seg-a-'+key)) document.getElementById('seg-a-'+key).style.width = (vAbs / maxVal * 100) + '%';
+                if (isInside) {
+                    var txtCol = getTextColor(bgCol);
+                    barHTML = `<div class="chart-bar-fill" style="width:0%; background-color:${bgCol}; color:${txtCol};" data-target="${pVal}">${displayStat}</div>`;
                 } else {
-                    if(document.getElementById('bar-'+key)) document.getElementById('bar-'+key).style.width = (valComparaison / maxVal * 100) + '%';
+                    barHTML = `
+                        <div class="chart-bar-fill" style="width:0%; background-color:${bgCol};" data-target="${pVal}"></div>
+                        <div style="margin-left:8px; font-weight:bold; color:#333; font-size:0.9em;">${displayStat}</div>
+                    `;
                 }
-            }, 50);
+
+                row.innerHTML = `
+                    <div class="chart-label" title="${data.nom}">${data.nom}</div>
+                    <div class="chart-track" style="width: 100%; display:flex; align-items:center;">
+                        <div class="chart-bar-area" style="width:100%; height:20px; display:flex;">
+                             ${barHTML}
+                        </div>
+                    </div>
+                `;
+            }
+            container.appendChild(row);
         }
     });
+
+    // Animation différée
+    setTimeout(function () {
+        // Sélecteur pour les segments (vue globale)
+        container.querySelectorAll('.chart-bar-segment').forEach(function (el) {
+            var t = parseFloat(el.getAttribute('data-target'));
+            if (t < 0) t = 0;
+            el.style.width = t + '%';
+        });
+        // Sélecteur pour les barres remplies (vue filtrée)
+        container.querySelectorAll('.chart-bar-fill').forEach(function (el) {
+            el.style.width = el.getAttribute('data-target') + '%';
+        });
+    }, 50);
 }
 
 // --- 3. Filtres (Cartes) ---
@@ -122,15 +210,15 @@ function appliquerFiltres() {
     updateChart(selVote);
 
     var totalVisible = 0;
-    document.querySelectorAll('.bloc-groupe').forEach(function(bloc) {
+    document.querySelectorAll('.bloc-groupe').forEach(function (bloc) {
         var cartes = bloc.querySelectorAll('.depute-card');
         var visibleGrp = 0;
-        cartes.forEach(function(card) {
+        cartes.forEach(function (card) {
             var dept = card.getAttribute('data-dept');
             var grp = card.getAttribute('data-groupe');
             var vote = card.getAttribute('data-vote');
 
-            var matchRegion = (selRegion === 'all') ? true : (regionsMap[selRegion] && regionsMap[selRegion].includes(dept));
+            var matchRegion = (selRegion === 'all') ? true : (typeof regionsMap !== 'undefined' && regionsMap[selRegion] && regionsMap[selRegion].includes(dept));
             var matchDept = (selDept === 'all' || dept === selDept);
             var matchGroupe = (selGroupe === 'all' || grp === selGroupe);
             var matchVote = (selVote === 'all' || vote === selVote);
@@ -141,14 +229,20 @@ function appliquerFiltres() {
                 card.style.display = 'none';
             }
         });
-        if(visibleGrp === 0) bloc.style.display = 'none';
-        else {
+
+        if (visibleGrp === 0) {
+            bloc.style.display = 'none';
+        } else {
             bloc.style.display = 'block';
             var c = bloc.querySelector('.count');
-            if(c) c.innerText = '(' + visibleGrp + ')';
+            if (c) c.innerText = visibleGrp;
         }
     });
-    document.getElementById('compteur-filtre').innerText = totalVisible + ' député(s)';
+
+    var cpt = document.getElementById('compteur-filtre');
+    if (cpt) cpt.innerText = totalVisible + ' député(s)';
 }
 
-document.addEventListener('DOMContentLoaded', appliquerFiltres);
+document.addEventListener('DOMContentLoaded', function () {
+    if (typeof updateChart === 'function') updateChart('all');
+});

@@ -1,0 +1,1756 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="100%" viewBox="0 0 237 134" preserveAspectRatio="xMidYMid meet">
+    <a>
+        <circle cx="422.29" cy="287.20" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="null" id="null" style="null" fill="#BBBBBB" stroke="#fff"/>
+        <title>Bancs des ministres</title>
+    </a>
+    <a>
+        <circle cx="339.50" cy="309.53" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="null" id="null" style="null" fill="#BBBBBB" stroke="#fff"/>
+        <title>Bancs des commissions</title>
+    </a>
+    <a>
+        <circle cx="378.07" cy="254.34" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p331" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="408.10" cy="249.25" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p329" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="392.97" cy="251.17" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p330" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="363.49" cy="258.73" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p332" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="574.01" cy="188.23" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p191" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="599.65" cy="178.78" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p198" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="609.76" cy="216.03" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p188" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="598.35" cy="206.12" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p189" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="636.77" cy="211.23" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p195" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="625.02" cy="199.72" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p196" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="612.63" cy="188.89" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p197" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="620.61" cy="226.50" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p187" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="586.43" cy="196.85" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p190" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="576.16" cy="109.67" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p222" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="590.55" cy="144.06" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p210" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="578.54" cy="137.00" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p211" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="586.12" cy="169.42" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p199" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="602.62" cy="123.94" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p220" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="589.55" cy="116.51" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p221" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="613.61" cy="159.65" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p207" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="602.24" cy="151.61" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p209" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="566.25" cy="130.45" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p212" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="572.07" cy="160.84" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p200" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="557.57" cy="153.06" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p201" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="624.63" cy="168.15" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p206" style="fill: rgb(221, 221, 221);"/>
+    </a>
+    <a>
+        <circle cx="655.43" cy="196.32" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p203" style="fill: rgb(221, 221, 221);"/>
+    </a>
+    <a>
+        <circle cx="645.56" cy="186.51" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p204" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="635.29" cy="177.11" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p205" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="596.10" cy="63.99" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p245" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="620.87" cy="104.79" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p231" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="609.49" cy="97.91" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p232" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="597.88" cy="91.44" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p233" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="586.04" cy="85.38" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p234" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="639.67" cy="149.60" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p216" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="627.71" cy="140.50" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p217" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="615.35" cy="131.94" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p219" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="678.93" cy="118.43" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p238" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="667.96" cy="109.41" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p239" style="fill: rgb(221, 221, 221);"/>
+    </a>
+    <a>
+        <circle cx="692.77" cy="163.50" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p223" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="683.42" cy="154.05" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p224" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="673.75" cy="144.94" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p225" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="651.22" cy="159.23" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p215" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="672.97" cy="179.97" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p213" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="662.33" cy="169.36" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p214" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="656.70" cy="100.79" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p240" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="645.13" cy="92.55" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p241" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="633.23" cy="84.76" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p242" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="621.11" cy="77.41" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p243" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="608.74" cy="70.47" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p244" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="663.75" cy="136.17" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p226" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="653.46" cy="127.77" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p227" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="642.87" cy="119.72" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p228" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="632.00" cy="112.06" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p230" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="709.74" cy="147.76" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p235" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="699.84" cy="137.59" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p236" style="fill: rgb(221, 221, 221);"/>
+    </a>
+    <a>
+        <circle cx="689.61" cy="127.84" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p237" style="fill: rgb(221, 221, 221);"/>
+    </a>
+    <a>
+        <circle cx="485.33" cy="311.62" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p164" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="496.72" cy="319.40" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p163" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="507.33" cy="328.24" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p162" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="510.53" cy="300.58" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p166" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="496.29" cy="291.21" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p167" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="515.34" cy="249.14" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p175" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="529.93" cy="286.98" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p169" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="517.67" cy="277.98" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p170" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="523.40" cy="311.70" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p165" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="504.68" cy="270.03" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p171" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="524.53" cy="226.77" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p180" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="538.58" cy="234.83" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p179" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="557.98" cy="280.54" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p172" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="544.70" cy="268.86" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p173" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="530.44" cy="258.37" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p174" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="541.41" cy="296.96" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p168" style="fill: rgb(221, 221, 221);"/>
+    </a>
+    <a>
+        <circle cx="546.87" cy="212.45" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p185" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="533.58" cy="205.18" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p186" style="fill: rgb(221, 221, 221);"/>
+    </a>
+    <a>
+        <circle cx="551.96" cy="243.94" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p178" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="564.60" cy="254.07" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p177" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="583.31" cy="239.47" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p182" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="571.79" cy="229.64" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p183" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="576.41" cy="265.13" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p176" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="547.86" cy="173.09" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p193" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="594.11" cy="250.07" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p181" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="561.14" cy="180.31" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p192" style="fill: rgb(221, 221, 221);"/>
+    </a>
+    <a>
+        <circle cx="683.43" cy="274.61" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p111" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="656.18" cy="272.53" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p104" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="677.08" cy="312.69" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p101" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="670.85" cy="298.93" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p102" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="703.63" cy="319.58" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p108" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="697.75" cy="304.21" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p109" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="691.00" cy="289.21" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p110" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="682.55" cy="326.71" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p100" style="fill: rgb(221, 221, 221);"/>
+    </a>
+    <a>
+        <circle cx="663.87" cy="285.53" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p103" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="690.93" cy="202.02" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p135" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="689.66" cy="239.28" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p123" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="681.70" cy="227.86" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p124" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="675.04" cy="260.46" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p112" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="709.03" cy="226.01" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p133" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="700.25" cy="213.81" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p134" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="704.12" cy="263.05" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p120" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="697.13" cy="251.01" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p122" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="673.26" cy="216.79" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p125" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="665.86" cy="246.81" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p113" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="655.93" cy="233.70" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p114" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="710.59" cy="275.38" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p119" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="726.83" cy="313.81" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p116" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="721.95" cy="300.77" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p117" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="728.22" cy="168.73" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p158" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="733.62" cy="216.21" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p144" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="726.14" cy="205.22" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p145" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="718.29" cy="194.50" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p146" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="710.06" cy="184.07" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p147" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="731.99" cy="264.77" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p129" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="724.92" cy="251.51" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p130" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="717.26" cy="238.58" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p132" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="780.96" cy="252.66" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p151" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="774.73" cy="239.93" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p152" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="774.48" cy="299.52" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p136" style="fill: rgb(221, 221, 221);"/>
+    </a>
+    <a>
+        <circle cx="769.92" cy="287.04" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p137" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="764.92" cy="274.73" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p138" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="738.47" cy="278.32" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p128" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="749.59" cy="306.24" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p126" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="744.34" cy="292.16" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p127" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="768.08" cy="227.36" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p153" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="760.93" cy="215.05" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p154" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="753.37" cy="203.09" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p155" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="745.42" cy="191.31" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p156" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="737.01" cy="179.88" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p157" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="759.50" cy="262.60" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p139" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="753.64" cy="250.67" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p140" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="747.38" cy="238.95" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p141" style="fill: rgb(221, 221, 221);"/>
+    </a>
+    <a>
+        <circle cx="740.70" cy="227.46" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p143" style="fill: rgb(221, 221, 221);"/>
+    </a>
+    <a>
+        <circle cx="796.77" cy="292.16" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p148" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="791.93" cy="278.84" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p149" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="786.73" cy="265.65" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p150" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="524.03" cy="347.64" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p77" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="531.11" cy="359.46" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p76" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="537.03" cy="371.94" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p75" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="551.51" cy="348.11" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p79" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="542.51" cy="333.64" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p80" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="577.41" cy="303.40" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p88" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="574.86" cy="343.88" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p82" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="567.48" cy="330.59" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p83" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="558.53" cy="363.62" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p78" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="559.01" cy="317.95" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p84" style="fill: rgb(221, 221, 221);"/>
+    </a>
+    <a>
+        <circle cx="595.12" cy="286.92" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p93" style="fill: rgb(221, 221, 221);"/>
+    </a>
+    <a>
+        <circle cx="604.51" cy="300.10" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p92" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="603.03" cy="349.72" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p85" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="595.83" cy="333.56" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p86" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="587.28" cy="318.08" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p87" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="581.11" cy="357.75" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p81" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="621.41" cy="283.23" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p98" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="612.37" cy="271.08" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p99" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="612.87" cy="313.96" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p91" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="620.12" cy="328.43" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p90" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="643.23" cy="322.97" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p95" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="636.88" cy="309.23" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p96" style="fill: rgb(221, 221, 221);"/>
+    </a>
+    <a>
+        <circle cx="629.59" cy="295.97" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p97" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="626.24" cy="343.42" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p89" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="638.73" cy="247.88" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p106" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="648.63" cy="337.12" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p94" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="647.79" cy="259.97" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p105" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="743.68" cy="448.50" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p38" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="744.74" cy="431.68" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p39" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="764.57" cy="365.64" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p52" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="761.60" cy="349.37" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p53" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="793.84" cy="437.98" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p57" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="768.47" cy="437.34" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p48" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="792.86" cy="453.29" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p56" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="767.24" cy="451.64" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p47" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="794.25" cy="422.47" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p58" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="794.09" cy="407.10" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p59" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="793.36" cy="391.78" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p60" style="fill: rgb(221, 221, 221);"/>
+    </a>
+    <a>
+        <circle cx="769.05" cy="422.82" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p49" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="768.99" cy="408.43" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p50" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="768.28" cy="394.09" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p51" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="818.43" cy="433.85" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p66" style="fill: rgb(221, 221, 221);"/>
+    </a>
+    <a>
+        <circle cx="818.13" cy="419.70" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p67" style="fill: rgb(221, 221, 221);"/>
+    </a>
+    <a>
+        <circle cx="817.66" cy="405.63" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p68" style="fill: rgb(221, 221, 221);"/>
+    </a>
+    <a>
+        <circle cx="790.19" cy="361.54" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p62" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="787.03" cy="343.94" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p63" style="fill: rgb(221, 221, 221);"/>
+    </a>
+    <a>
+        <circle cx="813.67" cy="360.34" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p70" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="811.22" cy="346.27" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p71" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="720.84" cy="431.46" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p31" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="698.68" cy="431.21" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p24" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="663.75" cy="429.28" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p17" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="719.90" cy="447.10" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p30" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="697.71" cy="445.77" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p23" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="663.19" cy="401.90" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p19" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="661.77" cy="388.43" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p20" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="659.60" cy="375.06" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p21" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="656.68" cy="361.85" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p22" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="744.92" cy="414.73" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p40" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="744.21" cy="397.97" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p41" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="720.92" cy="415.66" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p32" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="720.13" cy="400.08" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p33" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="698.76" cy="416.52" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p25" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="697.93" cy="402.02" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p26" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="663.85" cy="415.49" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p18" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="694.78" cy="373.31" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p27" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="691.16" cy="354.46" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p28" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="716.66" cy="369.55" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p35" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="712.75" cy="348.94" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p36" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="740.79" cy="369.40" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p43" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="738.04" cy="354.40" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p44" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="734.74" cy="339.51" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p45" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="758.03" cy="333.24" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p54" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="783.20" cy="326.46" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p64" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="808.48" cy="332.19" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p72" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="804.95" cy="318.22" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p73" style="fill: rgb(221, 221, 221);"/>
+    </a>
+    <a>
+        <circle cx="570.07" cy="404.97" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p2" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="593.28" cy="421.46" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p5" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="639.82" cy="427.03" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p12" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="570.67" cy="421.13" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p1" style="fill: rgb(221, 221, 221);"/>
+    </a>
+    <a>
+        <circle cx="567.57" cy="389.39" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p3" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="589.32" cy="384.32" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p7" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="592.19" cy="402.60" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p6" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="616.43" cy="424.53" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p8" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="615.77" cy="408.17" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p9" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="614.12" cy="392.27" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p10" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="611.48" cy="376.50" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p11" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="634.73" cy="368.86" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p16" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="637.31" cy="383.17" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p15" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="639.04" cy="397.60" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p14" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="639.90" cy="412.13" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p13" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="485.63" cy="127.03" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p279" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="466.12" cy="146.16" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p272" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="510.15" cy="156.86" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p269" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="495.67" cy="152.50" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p270" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="501.63" cy="130.94" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p278" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="524.36" cy="161.99" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p268" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="480.98" cy="148.93" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p271" style="fill: rgb(221, 221, 221);"/>
+    </a>
+    <a>
+        <circle cx="435.80" cy="73.60" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p303" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="463.06" cy="99.07" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p291" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="449.21" cy="97.55" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p292" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="469.44" cy="124.04" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p280" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="465.81" cy="75.78" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p301" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="450.84" cy="74.35" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p302" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="476.83" cy="101.17" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p290" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="435.30" cy="96.61" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p293" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="453.10" cy="121.96" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p281" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="436.66" cy="120.81" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p282" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="543.71" cy="120.16" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p284" style="fill: rgb(221, 221, 221);"/>
+    </a>
+    <a>
+        <circle cx="530.67" cy="115.25" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p285" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="517.45" cy="110.89" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p286" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="435.16" cy="23.68" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p327" style="fill: rgb(221, 221, 221);"/>
+    </a>
+    <a>
+        <circle cx="474.59" cy="50.82" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p312" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="461.39" cy="49.21" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p313" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="448.13" cy="48.06" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p314" style="fill: rgb(221, 221, 221);"/>
+    </a>
+    <a>
+        <circle cx="434.84" cy="47.38" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p315" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="510.15" cy="84.01" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p297" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="495.50" cy="80.61" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p298" style="fill: rgb(221, 221, 221);"/>
+    </a>
+    <a>
+        <circle cx="480.71" cy="77.86" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p300" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="533.15" cy="39.48" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p320" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="519.46" cy="35.71" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p321" style="fill: rgb(221, 221, 221);"/>
+    </a>
+    <a>
+        <circle cx="564.29" cy="74.92" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p304" style="null"/>
+    </a>
+    <a>
+        <circle cx="551.88" cy="70.13" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p305" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="539.31" cy="65.78" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p306" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="524.63" cy="88.05" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p296" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="552.99" cy="98.06" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p294" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="538.92" cy="92.74" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p295" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="505.61" cy="32.45" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p322" style="fill: rgb(221, 221, 221);"/>
+    </a>
+    <a>
+        <circle cx="491.75" cy="29.66" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p323" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="477.66" cy="27.39" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p324" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="463.58" cy="25.61" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p325" style="fill: rgb(221, 221, 221);"/>
+    </a>
+    <a>
+        <circle cx="449.46" cy="24.37" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p326" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="526.60" cy="61.88" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p307" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="513.75" cy="58.43" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p308" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="500.79" cy="55.43" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p309" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="487.73" cy="52.89" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p311" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="573.27" cy="53.66" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p317" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="560.07" cy="48.45" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p318" style="fill: rgb(221, 221, 221);"/>
+    </a>
+    <a>
+        <circle cx="546.68" cy="43.73" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p319" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="437.63" cy="225.83" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p256" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="466.51" cy="254.34" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p249" style="fill: rgb(221, 221, 221);"/>
+    </a>
+    <a>
+        <circle cx="451.61" cy="251.17" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p250" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="436.48" cy="249.25" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p251" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="436.80" cy="201.62" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p261" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="452.95" cy="203.21" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p260" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="489.47" cy="236.96" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p253" style="fill: rgb(221, 221, 221);"/>
+    </a>
+    <a>
+        <circle cx="472.54" cy="231.77" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p254" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="455.21" cy="228.04" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p255" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="481.09" cy="258.73" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p248" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="451.31" cy="179.38" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p266" style="fill: rgb(221, 221, 221);"/>
+    </a>
+    <a>
+        <circle cx="436.18" cy="178.19" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p267" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="468.91" cy="206.04" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p259" style="fill: rgb(221, 221, 221);"/>
+    </a>
+    <a>
+        <circle cx="484.60" cy="210.09" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p258" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="495.65" cy="189.09" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p263" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="481.11" cy="184.84" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p264" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="466.30" cy="181.60" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p265" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="499.93" cy="215.33" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p257" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="436.04" cy="143.06" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p274" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="509.87" cy="194.32" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p262" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="451.13" cy="144.20" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p273" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="358.95" cy="127.03" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p359" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="378.46" cy="146.16" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p350" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="334.43" cy="156.86" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p353" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="348.91" cy="152.50" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p352" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="311.75" cy="141.41" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p362" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="327.21" cy="135.73" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p361" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="342.95" cy="130.94" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p360" style="fill: rgb(221, 221, 221);"/>
+    </a>
+    <a>
+        <circle cx="320.22" cy="161.99" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p354" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="363.60" cy="148.93" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p351" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="408.78" cy="73.60" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p374" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="381.52" cy="99.07" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p366" style="fill: rgb(221, 221, 221);"/>
+    </a>
+    <a>
+        <circle cx="395.37" cy="97.55" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p365" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="375.14" cy="124.04" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p358" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="378.77" cy="75.78" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p376" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="393.74" cy="74.35" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p375" style="fill: rgb(221, 221, 221);"/>
+    </a>
+    <a>
+        <circle cx="354.08" cy="103.84" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p368" style="fill: rgb(221, 221, 221);"/>
+    </a>
+    <a>
+        <circle cx="367.75" cy="101.17" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p367" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="409.28" cy="96.61" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p364" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="391.48" cy="121.96" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p357" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="407.92" cy="120.81" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p356" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="340.53" cy="107.08" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p370" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="300.87" cy="120.16" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p373" style="fill: rgb(221, 221, 221);"/>
+    </a>
+    <a>
+        <circle cx="313.91" cy="115.25" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p372" style="fill: rgb(221, 221, 221);"/>
+    </a>
+    <a>
+        <circle cx="327.13" cy="110.89" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p371" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="409.31" cy="23.76" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p397" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="369.99" cy="50.82" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p387" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="383.19" cy="49.21" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p386" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="396.46" cy="48.12" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p385" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="409.74" cy="47.38" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p384" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="334.43" cy="84.01" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p380" style="null"/>
+    </a>
+    <a>
+        <circle cx="349.08" cy="80.61" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p378" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="363.87" cy="77.86" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p377" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="311.43" cy="39.44" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p404" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="325.09" cy="35.69" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p403" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="280.29" cy="74.92" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p395" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="292.70" cy="70.13" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p394" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="305.27" cy="65.78" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p393" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="319.94" cy="88.05" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p381" style="fill: rgb(221, 221, 221);"/>
+    </a>
+    <a>
+        <circle cx="291.59" cy="98.06" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p383" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="305.66" cy="92.74" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p382" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="338.93" cy="32.42" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p402" style="null"/>
+    </a>
+    <a>
+        <circle cx="352.88" cy="29.62" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p401" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="366.92" cy="27.41" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p400" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="381.00" cy="25.66" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p399" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="395.13" cy="24.44" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p398" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="317.99" cy="61.88" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p392" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="330.83" cy="58.43" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p391" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="343.79" cy="55.43" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p389" style="fill: rgb(221, 221, 221);"/>
+    </a>
+    <a>
+        <circle cx="356.85" cy="52.89" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p388" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="271.28" cy="53.59" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p407" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="284.48" cy="48.41" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p406" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="297.84" cy="43.67" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p405" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="406.95" cy="225.83" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p333" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="407.78" cy="201.62" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p337" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="391.63" cy="203.21" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p338" style="fill: rgb(221, 221, 221);"/>
+    </a>
+    <a>
+        <circle cx="355.11" cy="236.96" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p336" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="372.04" cy="231.77" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p335" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="389.36" cy="228.04" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p334" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="393.27" cy="179.38" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p343" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="408.40" cy="178.19" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p342" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="375.68" cy="206.04" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p339" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="359.98" cy="210.09" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p340" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="348.93" cy="189.09" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p346" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="363.47" cy="184.84" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p345" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="378.28" cy="181.60" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p344" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="344.65" cy="215.33" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p341" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="408.54" cy="143.06" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p348" style="fill: rgb(221, 221, 221);"/>
+    </a>
+    <a>
+        <circle cx="334.71" cy="194.32" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p347" style="fill: rgb(221, 221, 221);"/>
+    </a>
+    <a>
+        <circle cx="393.45" cy="144.20" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p349" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="244.93" cy="178.78" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p439" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="270.57" cy="188.23" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p430" style="fill: rgb(221, 221, 221);"/>
+    </a>
+    <a>
+        <circle cx="234.82" cy="216.03" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p433" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="246.23" cy="206.12" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p432" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="207.81" cy="211.23" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p442" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="219.56" cy="199.72" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p441" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="231.95" cy="188.89" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p440" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="223.97" cy="226.50" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p434" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="258.15" cy="196.85" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p431" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="268.42" cy="109.67" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p454" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="254.03" cy="144.06" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p446" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="266.04" cy="137.00" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p445" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="258.46" cy="169.42" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p438" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="241.96" cy="123.94" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p456" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="255.03" cy="116.51" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p455" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="230.97" cy="159.65" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p448" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="242.34" cy="151.61" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p447" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="278.32" cy="130.45" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p444" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="272.50" cy="160.84" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p437" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="287.01" cy="153.06" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p436" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="219.95" cy="168.15" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p450" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="189.15" cy="196.32" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p453" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="199.02" cy="186.51" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p452" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="209.29" cy="177.11" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p451" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="248.48" cy="63.91" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p478" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="223.71" cy="104.79" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p467" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="235.09" cy="97.91" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p466" style="fill: rgb(221, 221, 221);"/>
+    </a>
+    <a>
+        <circle cx="246.70" cy="91.44" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p465" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="258.54" cy="85.38" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p464" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="204.91" cy="149.60" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p460" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="216.87" cy="140.50" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p458" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="229.23" cy="131.94" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p457" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="165.60" cy="118.35" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p485" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="176.60" cy="109.25" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p484" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="151.81" cy="163.50" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p475" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="161.15" cy="154.05" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p474" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="170.83" cy="144.94" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p473" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="193.36" cy="159.23" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p461" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="171.61" cy="179.97" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p463" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="182.26" cy="169.36" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p462" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="187.80" cy="100.72" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p483" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="199.40" cy="92.47" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p482" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="211.31" cy="84.72" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p481" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="223.36" cy="77.31" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p480" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="235.83" cy="70.37" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p479" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="180.83" cy="136.17" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p472" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="191.12" cy="127.77" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p471" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="201.71" cy="119.72" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p469" style="fill: rgb(221, 221, 221);"/>
+    </a>
+    <a>
+        <circle cx="212.58" cy="112.06" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p468" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="134.84" cy="147.73" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p488" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="144.72" cy="137.60" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p487" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="154.98" cy="127.81" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p486" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="329.24" cy="249.14" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p413" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="314.65" cy="286.98" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p411" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="326.92" cy="277.98" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p410" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="339.89" cy="270.03" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p409" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="320.05" cy="226.77" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p417" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="306.00" cy="234.83" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p418" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="286.60" cy="280.54" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p416" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="299.88" cy="268.86" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p415" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="314.14" cy="258.37" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p414" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="303.17" cy="296.96" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p412" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="297.71" cy="212.45" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p423" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="311.00" cy="205.18" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p422" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="292.62" cy="243.94" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p419" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="279.98" cy="254.07" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p420" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="261.27" cy="239.47" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p426" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="272.79" cy="229.64" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p425" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="284.95" cy="220.61" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p424" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="268.17" cy="265.13" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p421" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="296.72" cy="173.09" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p428" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="250.46" cy="250.07" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p427" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="283.44" cy="180.31" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p429" style="fill: rgb(221, 221, 221);"/>
+    </a>
+    <a>
+        <circle cx="161.15" cy="274.61" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p525" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="188.40" cy="272.53" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p516" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="167.50" cy="312.69" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p519" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="173.73" cy="298.93" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p518" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="140.96" cy="319.58" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p528" style="fill: rgb(221, 221, 221);"/>
+    </a>
+    <a>
+        <circle cx="146.83" cy="304.21" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p527" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="153.57" cy="289.21" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p526" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="162.03" cy="326.71" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p520" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="180.71" cy="285.53" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p517" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="153.65" cy="202.02" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p540" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="154.92" cy="239.28" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p532" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="162.88" cy="227.86" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p531" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="169.54" cy="260.46" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p524" style="fill: rgb(221, 221, 221);"/>
+    </a>
+    <a>
+        <circle cx="135.55" cy="226.01" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p542" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="144.33" cy="213.81" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p541" style="fill: rgb(221, 221, 221);"/>
+    </a>
+    <a>
+        <circle cx="140.46" cy="263.05" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p534" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="147.44" cy="251.01" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p533" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="171.32" cy="216.79" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p530" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="178.72" cy="246.81" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p523" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="188.66" cy="233.70" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p522" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="133.99" cy="275.38" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p536" style="fill: rgb(221, 221, 221);"/>
+    </a>
+    <a>
+        <circle cx="117.75" cy="313.81" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p539" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="122.63" cy="300.77" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p538" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="128.04" cy="287.96" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p537" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="116.37" cy="168.74" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p564" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="110.96" cy="216.21" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p553" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="118.44" cy="205.22" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p552" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="126.29" cy="194.50" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p551" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="134.52" cy="184.07" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p550" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="112.59" cy="264.77" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p546" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="119.66" cy="251.51" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p544" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="127.32" cy="238.58" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p543" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="63.78" cy="252.69" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p571" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="70.01" cy="239.86" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p570" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="70.11" cy="299.52" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p561" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="74.66" cy="287.04" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p560" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="79.66" cy="274.73" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p559" style="fill: rgb(221, 221, 221);"/>
+    </a>
+    <a>
+        <circle cx="106.11" cy="278.32" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p547" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="94.99" cy="306.24" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p549" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="100.24" cy="292.16" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p548" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="76.60" cy="227.42" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p569" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="83.73" cy="215.13" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p568" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="91.26" cy="203.07" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p567" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="99.24" cy="191.32" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p566" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="107.61" cy="179.89" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p565" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="85.08" cy="262.60" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p558" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="90.93" cy="250.67" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p557" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="97.20" cy="238.95" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p555" style="fill: rgb(221, 221, 221);"/>
+    </a>
+    <a>
+        <circle cx="103.88" cy="227.46" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p554" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="48.05" cy="292.28" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p574" style="fill: rgb(221, 221, 221);"/>
+    </a>
+    <a>
+        <circle cx="52.81" cy="278.94" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p573" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="58.06" cy="265.76" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p572" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="320.54" cy="347.64" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p489" style="null"/>
+    </a>
+    <a>
+        <circle cx="313.47" cy="359.46" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p490" style="null"/>
+    </a>
+    <a>
+        <circle cx="307.55" cy="371.94" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p491" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="293.07" cy="348.11" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p493" style="null"/>
+    </a>
+    <a>
+        <circle cx="302.07" cy="333.64" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p492" style="null"/>
+    </a>
+    <a>
+        <circle cx="267.17" cy="303.40" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p499" style="fill: rgb(221, 221, 221);"/>
+    </a>
+    <a>
+        <circle cx="269.72" cy="343.88" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p497" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="277.10" cy="330.59" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p496" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="286.05" cy="363.62" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p494" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="285.57" cy="317.95" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p495" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="249.46" cy="286.92" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p503" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="240.06" cy="300.10" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p504" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="241.55" cy="349.72" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p502" style="fill: rgb(221, 221, 221);"/>
+    </a>
+    <a>
+        <circle cx="248.74" cy="333.56" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p501" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="257.30" cy="318.08" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p500" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="263.47" cy="357.75" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p498" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="223.17" cy="283.23" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p509" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="232.21" cy="271.08" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p508" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="231.71" cy="313.96" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p505" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="224.46" cy="328.43" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p506" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="201.35" cy="322.97" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p512" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="207.70" cy="309.23" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p511" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="214.99" cy="295.97" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p510" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="218.34" cy="343.42" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p507" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="205.85" cy="247.88" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p514" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="195.95" cy="337.12" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p513" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="196.79" cy="259.97" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p515" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="101.56" cy="448.50" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p621" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="100.50" cy="431.68" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p620" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="80.66" cy="365.64" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p625" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="83.64" cy="349.37" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p624" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="51.40" cy="437.98" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p639" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="76.76" cy="437.34" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p629" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="52.38" cy="453.29" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p640" style="null"/>
+    </a>
+    <a>
+        <circle cx="77.99" cy="451.64" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p630" style="fill: rgb(221, 221, 221);"/>
+    </a>
+    <a>
+        <circle cx="50.99" cy="422.47" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p638" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="51.15" cy="407.10" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p637" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="51.88" cy="391.78" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p636" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="76.19" cy="422.82" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p628" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="76.24" cy="408.43" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p627" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="76.96" cy="394.09" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p626" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="26.91" cy="433.86" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p650" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="27.28" cy="419.76" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p649" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="27.80" cy="405.75" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p648" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="55.05" cy="361.54" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p634" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="58.21" cy="343.94" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p633" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="31.63" cy="360.31" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p645" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="33.96" cy="346.14" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p644" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="124.40" cy="431.46" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p611" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="146.56" cy="431.21" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p603" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="181.48" cy="429.28" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p597" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="125.34" cy="447.10" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p612" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="147.53" cy="445.77" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p604" style="fill: rgb(221, 221, 221);"/>
+    </a>
+    <a>
+        <circle cx="182.05" cy="401.90" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p595" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="183.47" cy="388.43" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p594" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="185.64" cy="375.06" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p593" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="188.56" cy="361.85" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p592" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="100.32" cy="414.73" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p619" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="101.02" cy="397.97" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p618" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="124.32" cy="415.66" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p610" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="125.11" cy="400.08" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p609" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="146.48" cy="416.52" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p602" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="147.31" cy="402.02" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p601" style="fill: rgb(221, 221, 221);"/>
+    </a>
+    <a>
+        <circle cx="181.39" cy="415.49" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p596" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="150.46" cy="373.31" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p600" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="154.07" cy="354.46" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p599" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="128.58" cy="369.55" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p607" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="132.49" cy="348.94" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p606" style="fill: rgb(221, 221, 221);"/>
+    </a>
+    <a>
+        <circle cx="104.45" cy="369.40" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p616" style="fill: rgb(221, 221, 221);"/>
+    </a>
+    <a>
+        <circle cx="107.19" cy="354.40" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p615" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="110.50" cy="339.51" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p614" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="87.21" cy="333.24" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p623" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="62.04" cy="326.46" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p632" style="fill: rgb(221, 221, 221);"/>
+    </a>
+    <a>
+        <circle cx="36.86" cy="332.12" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p643" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="40.25" cy="318.17" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p642" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="275.17" cy="404.97" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p577" style="fill: rgb(221, 221, 221);"/>
+    </a>
+    <a>
+        <circle cx="251.96" cy="421.46" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p582" style="fill: rgb(221, 221, 221);"/>
+    </a>
+    <a>
+        <circle cx="228.81" cy="424.53" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p586" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="229.47" cy="408.17" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p585" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="205.42" cy="427.03" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p591" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="274.57" cy="421.13" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p578" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="277.66" cy="389.39" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p576" style="fill: rgb(221, 221, 221);"/>
+    </a>
+    <a>
+        <circle cx="255.92" cy="384.33" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p580" style="fill: rgb(221, 221, 221);"/>
+    </a>
+    <a>
+        <circle cx="253.04" cy="402.60" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p581" style="fill: rgb(221, 221, 221);"/>
+    </a>
+    <a>
+        <circle cx="231.11" cy="392.27" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p584" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="233.76" cy="376.50" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p583" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="210.51" cy="368.86" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p587" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="207.92" cy="383.17" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p588" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="206.20" cy="397.60" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p589" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="205.33" cy="412.13" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p590" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="716.54" cy="287.96" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p118" style="fill: rgb(32, 107, 167);"/>
+    </a>
+    <a>
+        <circle cx="559.63" cy="220.61" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p184" style="fill: rgb(221, 221, 221);"/>
+    </a>
+    <a>
+        <circle cx="532.83" cy="141.41" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p276" style="fill: rgb(227, 64, 81);"/>
+    </a>
+    <a>
+        <circle cx="517.37" cy="135.73" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p277" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="504.05" cy="107.08" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p287" style="fill: rgb(159, 168, 173);"/>
+    </a>
+    <a>
+        <circle cx="490.50" cy="103.84" r="7" transform="matrix(0.28,0,0,0.28,0,0)" class="place" id="p288" style="fill: rgb(159, 168, 173);"/>
+    </a>
+</svg>

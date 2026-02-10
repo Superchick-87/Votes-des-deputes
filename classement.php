@@ -1,126 +1,223 @@
 <?php
 require 'db.php';
+require 'includes/functions.php';
+ini_set('max_execution_time', 60);
 
-// 1. Récupérer le nombre total de scrutins
-$stmt = $pdo->query("SELECT COUNT(*) FROM scrutins");
-$totalScrutins = $stmt->fetchColumn();
+// --- CHARGEMENT CONFIG & LÉGISLATURES ACTIVES ---
+$config = json_decode(file_get_contents(__DIR__ . '/config.json'), true);
+$lesLegislaturesActives = array_values(array_filter($config['legislatures'], function ($l) {
+    return isset($l['active']) && $l['active'] === true;
+}));
 
-// 2. Récupérer les données DES DÉPUTÉS ACTIFS UNIQUEMENT
-// MODIFICATION : Ajout de "WHERE d.est_actif = 1"
-$sql = "SELECT d.uid, d.nom, d.photo_url, d.groupe_uid, d.departement,
-               COALESCE(g.libelle, 'Non inscrit') as groupe_nom, 
-               COALESCE(g.couleur, '#888888') as couleur,
-               COUNT(v.id) as participation
+// On définit la législature par défaut comme étant la première du JSON (souvent la plus récente)
+$defaultLeg = !empty($lesLegislaturesActives) ? $lesLegislaturesActives[0]['id'] : '17';
+
+// --- GESTION DES PARAMÈTRES ---
+$leg = $_GET['leg'] ?? $defaultLeg;
+
+// 1. RÉCUPÉRATION DES TOTAUX
+$sqlCounts = "SELECT 
+    COUNT(*) as all_scrutins,
+    SUM(CASE WHEN type_scrutin = 'loi' THEN 1 ELSE 0 END) as nb_loi,
+    SUM(CASE WHEN type_scrutin = 'amendement' THEN 1 ELSE 0 END) as nb_amendement,
+    SUM(CASE WHEN type_scrutin = 'motion' THEN 1 ELSE 0 END) as nb_motion,
+    SUM(CASE WHEN type_scrutin = 'autre' THEN 1 ELSE 0 END) as nb_autre
+FROM scrutins WHERE legislature = ?";
+$stmt = $pdo->prepare($sqlCounts);
+$stmt->execute([$leg]);
+$totals = $stmt->fetch(PDO::FETCH_ASSOC);
+
+$totals['all_scrutins'] = $totals['all_scrutins'] ?: 1;
+$totals['nb_loi'] = $totals['nb_loi'] ?: 1;
+$totals['nb_amendement'] = $totals['nb_amendement'] ?: 1;
+$totals['nb_motion'] = $totals['nb_motion'] ?: 1;
+$totals['nb_autre'] = $totals['nb_autre'] ?: 1;
+
+// 2. RÉCUPÉRATION DE TOUTES LES STATS
+$sql = "SELECT 
+            d.uid, d.nom, d.photo_url, d.groupe_uid, d.departement, d.circonscription, d.est_actif,
+            COALESCE(g.libelle, 'Non inscrit') as groupe_nom, 
+            COALESCE(g.couleur, '#888888') as couleur,
+            st.nb_total, st.nb_loi, st.nb_amendement, st.nb_motion, st.nb_autre
         FROM deputes d
-        LEFT JOIN votes v ON d.uid = v.acteur_uid
-        LEFT JOIN groupes g ON d.groupe_uid = g.uid
-        WHERE d.est_actif = 1 
-        GROUP BY d.uid
-        ORDER BY participation DESC, d.nom ASC";
+        INNER JOIN stats_deputes st ON d.uid = st.depute_uid AND st.legislature = ?
+        LEFT JOIN groupes g ON d.groupe_uid = g.uid 
+        ORDER BY st.nb_total DESC, d.nom ASC";
 
-$stmt = $pdo->query($sql);
+$stmt = $pdo->prepare($sql);
+$stmt->execute([$leg]);
 $classement = $stmt->fetchAll();
 
-// Préparation des listes pour les filtres
+// 3. PRÉPARATION DONNÉES
 $listeDepts = [];
 $listeGroupes = [];
-$totalVotesAssemblee = 0;
+$statsGroupes = [];
+$sommeMoyenne = ['all' => 0, 'loi' => 0, 'amendement' => 0, 'motion' => 0, 'autre' => 0];
+$nbDeputes = count($classement);
 
-foreach($classement as $c) {
-    if(!empty($c->departement)) $listeDepts[$c->departement] = $c->departement;
-    
-    // On sécurise le nom du groupe pour les listes
+foreach ($classement as $c) {
+    if (!empty($c->departement)) $listeDepts[$c->departement] = $c->departement;
+
     $nomGroupe = $c->groupe_nom ?? 'Non inscrit';
     $uidGroupe = $c->groupe_uid ?? 'NI';
-    $listeGroupes[$uidGroupe] = $nomGroupe;
-    
-    $totalVotesAssemblee += $c->participation;
-}
-asort($listeDepts);
-asort($listeGroupes);
+    $cleanName = str_replace('Groupe ', '', $nomGroupe);
+    $cleanName = trim(preg_replace('/\s*\(.*?\)/', '', $cleanName));
+    if ($c->groupe_uid === 'NI' || $nomGroupe === 'Non inscrit') $cleanName = 'Non inscrit';
 
-$moyenne = ($totalScrutins > 0 && count($classement) > 0) 
-    ? round(($totalVotesAssemblee / count($classement) / $totalScrutins) * 100, 1) 
-    : 0;
+    $listeGroupes[$uidGroupe] = $cleanName;
+
+    $sommeMoyenne['all'] += $c->nb_total;
+    $sommeMoyenne['loi'] += $c->nb_loi;
+    $sommeMoyenne['amendement'] += $c->nb_amendement;
+    $sommeMoyenne['motion'] += $c->nb_motion;
+    $sommeMoyenne['autre'] += $c->nb_autre;
+
+    if (!isset($statsGroupes[$cleanName])) {
+        $statsGroupes[$cleanName] = [
+            'nom' => $cleanName,
+            'couleur' => $c->couleur ?? '#888',
+            'nb_deputes' => 0,
+            'cumul' => ['all' => 0, 'loi' => 0, 'amendement' => 0, 'motion' => 0, 'autre' => 0]
+        ];
+    }
+    $statsGroupes[$cleanName]['nb_deputes']++;
+    $statsGroupes[$cleanName]['cumul']['all'] += $c->nb_total;
+    $statsGroupes[$cleanName]['cumul']['loi'] += $c->nb_loi;
+    $statsGroupes[$cleanName]['cumul']['amendement'] += $c->nb_amendement;
+    $statsGroupes[$cleanName]['cumul']['motion'] += $c->nb_motion;
+    $statsGroupes[$cleanName]['cumul']['autre'] += $c->nb_autre;
+}
+
+$groupesDataJS = [];
+foreach ($statsGroupes as $nom => $data) {
+    $nb = $data['nb_deputes'];
+    $groupesDataJS[] = [
+        'nom' => $nom,
+        'couleur' => $data['couleur'],
+        'nb_deputes' => $nb,
+        'stats' => [
+            'all' => round(($data['cumul']['all'] / $nb / $totals['all_scrutins']) * 100, 1),
+            'loi' => round(($data['cumul']['loi'] / $nb / $totals['nb_loi']) * 100, 1),
+            'amendement' => round(($data['cumul']['amendement'] / $nb / $totals['nb_amendement']) * 100, 1),
+            'motion' => round(($data['cumul']['motion'] / $nb / $totals['nb_motion']) * 100, 1),
+            'autre' => round(($data['cumul']['autre'] / $nb / $totals['nb_autre']) * 100, 1)
+        ]
+    ];
+}
+
+$globalAverages = [
+    'all' => ($nbDeputes > 0) ? round(($sommeMoyenne['all'] / $nbDeputes / $totals['all_scrutins']) * 100, 1) : 0,
+    'loi' => ($nbDeputes > 0) ? round(($sommeMoyenne['loi'] / $nbDeputes / $totals['nb_loi']) * 100, 1) : 0,
+    'amendement' => ($nbDeputes > 0) ? round(($sommeMoyenne['amendement'] / $nbDeputes / $totals['nb_amendement']) * 100, 1) : 0,
+    'motion' => ($nbDeputes > 0) ? round(($sommeMoyenne['motion'] / $nbDeputes / $totals['nb_motion']) * 100, 1) : 0,
+    'autre' => ($nbDeputes > 0) ? round(($sommeMoyenne['autre'] / $nbDeputes / $totals['nb_autre']) * 100, 1) : 0,
+];
+
+asort($listeDepts);
+uasort($listeGroupes, 'compareFrancais');
 ?>
 
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
-    <title>Classement Assiduité</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Classement Assiduité - Législature <?= $leg ?></title>
+    <link rel="stylesheet" href="css/style.css?v=<?= time() ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        .stats-header {
-            display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 30px;
-        }
-        .stat-card {
-            background: white; padding: 20px; border-radius: 8px; text-align: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-        .stat-big { font-size: 2em; font-weight: bold; color: #2c3e50; }
-        
-        .rank-table {
-            width: 100%; border-collapse: collapse; background: white;
-            border-radius: 8px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-        .rank-table th { 
-            background: #f8f9fa; color: #666; text-align: left; padding: 15px; 
-            cursor: pointer; user-select: none; /* Pour le clic */
-            transition: background 0.2s;
-        }
-        .rank-table th:hover { background: #eee; color: #333; }
-        
-        .rank-table td { padding: 12px 15px; border-bottom: 1px solid #eee; vertical-align: middle; }
-        .rank-table tr.hidden { display: none; }
-        
-        .rank-num { font-weight: bold; color: #888; font-size: 1.1em; width: 50px; text-align: center; }
-        .rank-1 { color: #f1c40f; font-size: 1.5em; }
-        .rank-2 { color: #95a5a6; font-size: 1.4em; }
-        .rank-3 { color: #cd7f32; font-size: 1.3em; }
-
-        .depute-cell { display: flex; align-items: center; gap: 15px; }
-        .avatar-mini { width: 40px; height: 50px; object-fit: cover; border-radius: 4px; background: #eee; }
-        .name-link { font-weight: bold; color: #333; text-decoration: none; }
-        .progress-bg { width: 100%; background: #eee; height: 8px; border-radius: 4px; margin-top: 5px; overflow: hidden; }
-        .progress-bar { height: 100%; background: #3498db; border-radius: 4px; }
-        .score-text { font-weight: bold; color: #333; }
-        
-        /* STYLE DES FLECHES DE TRI */
-        .sort-arrow { font-size: 0.8em; margin-left: 5px; opacity: 0.3; }
-        .th-sort-asc .sort-arrow { opacity: 1; }
-        .th-sort-desc .sort-arrow { opacity: 1; transform: rotate(180deg); display:inline-block; }
-
-        @media (max-width: 700px) {
-            .stats-header { grid-template-columns: 1fr; }
-            .hide-mobile { display: none; }
-        }
-    </style>
 </head>
+
 <body>
     <div class="container">
-        <header style="display:flex; justify-content:space-between; align-items:center; margin-bottom:30px;">
-            <div>
+        <header class="header-resum">
+            <div class="header-classement">
                 <a href="index.php" class="btn-back">← Retour Accueil</a>
-                <h1 style="margin:10px 0 0 0;">🏆 Classement par Assiduité</h1>
+                <h1>Classement par Assiduité</h1>
             </div>
-            <a href="update.php" class="btn-update" style="display:none;">🔄 Mettre à jour</a>
+            <?php
+            // --- AJOUT : RÉCUPÉRATION LÉGISLATURES ACTIVES VIA JSON ---
+            $configPath = __DIR__ . '/config.json';
+            $lesLegislaturesActives = [];
+            if (file_exists($configPath)) {
+                $config = json_decode(file_get_contents($configPath), true);
+                $lesLegislaturesActives = array_filter($config['legislatures'], function ($l) {
+                    return isset($l['active']) && $l['active'] === true;
+                });
+            }
+            ?>
+
+            <select class="leg-selector" onchange="window.location.href='?leg='+this.value">
+                <?php foreach ($lesLegislaturesActives as $l): ?>
+                    <option value="<?= $l['id'] ?>" <?= $leg == $l['id'] ? 'selected' : '' ?>>
+                        <?= $l['id'] ?>ᵉ législature
+                    </option>
+                <?php endforeach; ?>
+            </select>
         </header>
 
         <div class="stats-header">
-            <div class="stat-card"><div>Total Scrutins</div><div class="stat-big"><?= $totalScrutins ?></div></div>
-            <div class="stat-card"><div>Députés actifs</div><div class="stat-big"><?= count($classement) ?></div></div>
-            <div class="stat-card"><div>Moyenne Participation</div><div class="stat-big"><?= $moyenne ?>%</div></div>
+            <div class="stat-card">
+                <div id="label-total-type">Tous les Scrutins</div>
+                <div class="stat-big" id="val-total-count"><?= $totals['all_scrutins'] ?></div>
+            </div>
+            <div class="stat-card">
+                <div>Députés classés</div>
+                <div class="stat-big"><?= $nbDeputes ?></div>
+            </div>
+            <div class="stat-card">
+                <div>Moyenne Participation</div>
+                <div class="stat-big" id="val-moyenne-global"><?= $globalAverages['all'] ?>%</div>
+            </div>
+        </div>
+
+        <script>
+            if (localStorage.getItem('chartState') === 'hidden') {
+                document.write('<style>#groupes-chart-container { display: none; }</style>');
+            }
+        </script>
+        <button id="btn-toggle-chart" class="btn-toggle-chart">Masquer le classement des groupes ▲</button>
+
+        <div id="groupes-chart-container" class="chart-container">
+            <h3 class="chart-title">Moyenne de participation par groupe</h3>
+            <div id="chart-content"></div>
         </div>
 
         <div class="filters-bar">
-            <select id="filter-region" onchange="updateDeptsFromRegion()"><option value="all">🇫🇷 Régions (Toutes)</option>
-                <option value="Auvergne-Rhône-Alpes">Auvergne-Rhône-Alpes</option><option value="Bourgogne-Franche-Comté">Bourgogne-Franche-Comté</option><option value="Bretagne">Bretagne</option><option value="Centre-Val de Loire">Centre-Val de Loire</option><option value="Corse">Corse</option><option value="Grand Est">Grand Est</option><option value="Hauts-de-France">Hauts-de-France</option><option value="Île-de-France">Île-de-France</option><option value="Normandie">Normandie</option><option value="Nouvelle-Aquitaine">Nouvelle-Aquitaine</option><option value="Occitanie">Occitanie</option><option value="Pays de la Loire">Pays de la Loire</option><option value="Provence-Alpes-Côte d'Azur">PACA</option><option value="Outre-Mer">Outre-Mer</option>
+            <select id="filter-type" class="type-selector" onchange="updateScrutinType(this.value)">
+                <option value="all">📑 Tous les scrutins</option>
+                <option value="loi" selected>📜 Projets de Loi</option>
+                <option value="amendement">📝 Amendements</option>
+                <option value="motion">🛑 Motions de Censure</option>
+                <option value="autre">🔹 Autres votes</option>
             </select>
-            <select id="filter-dept" onchange="appliquerFiltres()"><option value="all">🌍 Départements (Tous)</option><?php foreach($listeDepts as $dept): ?><option value="<?= htmlspecialchars($dept) ?>"><?= $dept ?></option><?php endforeach; ?></select>
-            <select id="filter-groupe" onchange="appliquerFiltres()"><option value="all">👥 Groupes (Tous)</option><?php foreach($listeGroupes as $uid => $nom): ?><option value="<?= $uid ?>"><?= $nom ?></option><?php endforeach; ?></select>
-            <select id="filter-perf" onchange="appliquerFiltres()"><option value="all">📈 Performance (Toute)</option><option value="91-100">Excellente (91-100%)</option><option value="81-90">Très bonne (81-90%)</option><option value="71-80">Bonne (71-80%)</option><option value="61-70">Moyenne + (61-70%)</option><option value="51-60">Moyenne (51-60%)</option><option value="41-50">Faible (41-50%)</option><option value="0-40">Très faible (0-40%)</option></select>
+
+            <select id="filter-region" onchange="updateDeptsFromRegion()">
+                <option value="all">🇫🇷 Régions (Toutes)</option>
+                <option value="Auvergne-Rhône-Alpes">Auvergne-Rhône-Alpes</option>
+                <option value="Bourgogne-Franche-Comté">Bourgogne-Franche-Comté</option>
+                <option value="Bretagne">Bretagne</option>
+                <option value="Centre-Val de Loire">Centre-Val de Loire</option>
+                <option value="Corse">Corse</option>
+                <option value="Grand Est">Grand Est</option>
+                <option value="Hauts-de-France">Hauts-de-France</option>
+                <option value="Île-de-France">Île-de-France</option>
+                <option value="Normandie">Normandie</option>
+                <option value="Nouvelle-Aquitaine">Nouvelle-Aquitaine</option>
+                <option value="Occitanie">Occitanie</option>
+                <option value="Pays de la Loire">Pays de la Loire</option>
+                <option value="Provence-Alpes-Côte d'Azur">PACA</option>
+                <option value="Outre-Mer">Outre-Mer</option>
+            </select>
+
+            <select id="filter-dept" onchange="appliquerFiltres()">
+                <option value="all">🌍 Départements (Tous)</option>
+                <?php foreach ($listeDepts as $dept): ?><option value="<?= htmlspecialchars($dept) ?>"><?= $dept ?></option><?php endforeach; ?>
+            </select>
+
+            <select id="filter-groupe" onchange="appliquerFiltres()">
+                <option value="all">👥 Groupes (Tous)</option>
+                <?php foreach ($listeGroupes as $uid => $nom): ?><option value="<?= $uid ?>"><?= $nom ?></option><?php endforeach; ?>
+            </select>
             <div id="compteur-filtre"></div>
         </div>
 
@@ -128,87 +225,83 @@ $moyenne = ($totalScrutins > 0 && count($classement) > 0)
             <table class="rank-table" id="table-classement">
                 <thead>
                     <tr>
-                        <th onclick="trierTableau('rang')" width="60"># <span class="sort-arrow">▼</span></th>
+                        <th onclick="trierTableau('rang')" width="60"><span class="sort-arrow">▼</span></th>
                         <th onclick="trierTableau('nom')">Député <span class="sort-arrow">▲▼</span></th>
                         <th onclick="trierTableau('groupe')" class="hide-mobile">Groupe <span class="sort-arrow">▲▼</span></th>
                         <th onclick="trierTableau('perf')">Participation <span class="sort-arrow">▲▼</span></th>
                     </tr>
                 </thead>
                 <tbody id="table-body">
-                    <?php 
+                    <?php
                     $rank = 1;
-                    foreach($classement as $c): 
-                        // ... (le contenu PHP reste identique) ...
-                        $percent = ($totalScrutins > 0) ? round(($c->participation / $totalScrutins) * 100, 1) : 0;
-                        $rankClass = 'rank-num';
-                        $rankSymbol = $rank;
-                        if($rank == 1) { $rankClass .= ' rank-1'; $rankSymbol = '🥇'; }
-                        elseif($rank == 2) { $rankClass .= ' rank-2'; $rankSymbol = '🥈'; }
-                        elseif($rank == 3) { $rankClass .= ' rank-3'; $rankSymbol = '🥉'; }
-                        
-                        $barColor = '#3498db';
-                        if($percent < 20) $barColor = '#e74c3c';
-                        elseif($percent > 80) $barColor = '#27ae60';
-
-                        $deptAttr = htmlspecialchars($c->departement ?? '');
-                        $grpAttr = $c->groupe_uid ?? 'NI';
-                        $nomAttr = htmlspecialchars($c->nom ?? '');
-                        $grpNomAttr = htmlspecialchars($c->groupe_nom ?? 'Non inscrit');
+                    foreach ($classement as $c):
+                        $photoUrl = str_replace('/17/', "/$leg/", $c->photo_url);
+                        $rawName = $c->groupe_nom ?? 'Non inscrit';
+                        $cleanName = str_replace('Groupe ', '', $rawName);
+                        $cleanName = trim(preg_replace('/\s*\(.*?\)/', '', $cleanName));
+                        if ($c->groupe_uid === 'NI' || $rawName === 'Non inscrit') $cleanName = 'Non inscrit';
+                        $geoInfo = $c->departement . (!empty($c->circonscription) ? ' (' . $c->circonscription . ($c->circonscription == 1 ? 'ère' : 'e') . ' circo)' : '');
+                        $classInactive = getClasseDeputeInactif($c->est_actif);
                     ?>
-                    <tr class="depute-row" 
-                        data-dept="<?= $deptAttr ?>" 
-                        data-groupe="<?= $grpAttr ?>" 
-                        data-perf="<?= $percent ?>"
-                        data-nom="<?= $nomAttr ?>"
-                        data-groupe-nom="<?= $grpNomAttr ?>"
-                        data-rang="<?= $rank ?>">
-                        
-                        <td class="<?= $rankClass ?>"><?= $rankSymbol ?></td>
-                        <td>
-                            <div class="depute-cell">
-                                <img src="<?= $c->photo_url ?>" class="avatar-mini" loading="lazy" onerror="this.src='https://via.placeholder.com/40x50'">
-                                <div>
-                                    <a href="depute.php?uid=<?= $c->uid ?>" class="name-link"><?= $c->nom ?></a>
-                                    <div style="font-size:0.8em; color:#666;" class="hide-mobile"><?= $c->groupe_nom ?></div>
+                        <tr class="depute-row <?= $classInactive ?>"
+                            data-dept="<?= htmlspecialchars($c->departement ?? '') ?>"
+                            data-groupe="<?= $c->groupe_uid ?? 'NI' ?>"
+                            data-nom="<?= htmlspecialchars($c->nom ?? '') ?>"
+                            data-groupe-nom="<?= htmlspecialchars($cleanName) ?>"
+                            data-nb-all="<?= $c->nb_total ?>"
+                            data-nb-loi="<?= $c->nb_loi ?>"
+                            data-nb-amendement="<?= $c->nb_amendement ?>"
+                            data-nb-motion="<?= $c->nb_motion ?>"
+                            data-nb-autre="<?= $c->nb_autre ?>"
+
+                            data-perf="0" data-rang="<?= $rank ?>">
+
+                            <td class="rank-num"><?= $rank ?></td>
+                            <td>
+                                <div class="depute-cell">
+                                    <img src="<?= $photoUrl ?>" class="avatar-mini" loading="lazy" onerror="if (this.src.includes('/16/')) { this.src = this.src.replace('/16/', '/15/'); } else if (this.src.includes('/17/')) { this.src = this.src.replace('/17/', '/16/'); } else { this.src = 'https://via.placeholder.com/40x50'; this.onerror = null; }">
+                                    <div class="name-link"><?= $c->nom ?>
+                                        <div style="font-size:0.8em; color:#666; font-weight: 500;"><?= $geoInfo ?></div>
+                                    </div>
                                 </div>
-                            </div>
-                        </td>
-                        <td class="hide-mobile">
-                            <?php 
-                            $logoPath = "img/logos/" . ($c->groupe_uid ?? 'NI') . ".png";
-                            if (file_exists($logoPath)) {
-                                echo '<img src="'.$logoPath.'" alt="'.$grpNomAttr.'" style="height: 30px; vertical-align: middle; margin-right: 10px;">';
-                            } else {
-                                $couleurPastille = $c->couleur ?? '#888';
-                                echo '<span style="display:inline-block; width:20px; height:20px; border-radius:50%; background:'.$couleurPastille.'; vertical-align:middle; margin-right:10px;"></span>';
-                            }
-                            ?>
-                            <span style="color:<?= $c->couleur ?? '#333' ?>; font-weight:bold; vertical-align:middle;"><?= $grpNomAttr ?></span>
-                        </td>
-                        <td style="width: 30%;">
-                            <div style="display:flex; justify-content:space-between; align-items:center;">
-                                <span class="score-text"><?= $percent ?>%</span>
-                                <span style="font-size:0.8em; color:#888;">(<?= $c->participation ?> votes)</span>
-                            </div>
-                            <div class="progress-bg"><div class="progress-bar" style="width: <?= $percent ?>%; background: <?= $barColor ?>;"></div></div>
-                        </td>
-                    </tr>
-                    <?php $rank++; endforeach; ?>
+                            </td>
+                            <td class="hide-mobile cell-groupe">
+                                <?php
+                                $logoPath = "img/logos/" . ($c->groupe_uid ?? 'NI') . ".png";
+                                if (file_exists($logoPath)) {
+                                    echo '<img src="' . $logoPath . '" class="grp-logo" alt="Logo">';
+                                } else {
+                                    echo '<span class="grp-pastille" style="background:' . ($c->couleur ?? '#888') . ';"></span>';
+                                }
+                                ?>
+                                <span class="grp-nom" style="color:<?= $c->couleur ?? '#333' ?>;"><?= htmlspecialchars($cleanName) ?></span>
+                            </td>
+                            <td style="width: 30%;">
+                                <div>
+                                    <span class="score-text">0%</span>
+                                    <span class="score-abs" style="font-size:0.8em; color:#888;">(0 votes)</span>
+                                </div>
+                                <div class="progress-bg">
+                                    <div class="progress-bar" style="width: 0%; background: #ccc;"></div>
+                                </div>
+                            </td>
+                        </tr>
+                    <?php $rank++;
+                    endforeach; ?>
                 </tbody>
             </table>
         </div>
-        <!-- ```
-
-### Résultat -->
-<!-- Sur mobile, le tableau sera légèrement compacté (polices plus petites). S'il est toujours trop large, l'utilisateur pourra faire glisser **uniquement le tableau** de droite à gauche avec le doigt, sans que cela ne décale le titre ou le header du site. -->
         <br><br>
     </div>
-
+    <?php include 'includes/footer.php'; ?>
     <script>
         window.allDeptsGlobal = <?= json_encode(array_keys($listeDepts)) ?>;
+        window.serverTotals = <?= json_encode($totals) ?>;
+        window.serverAverages = <?= json_encode($globalAverages) ?>;
+        window.groupStats = <?= json_encode($groupesDataJS) ?>;
     </script>
-
-    <script src="js/common.js"></script>
-    <script src="js/classement.js"></script>
+    <script src="js/common.js?v=<?= time() ?>"></script>
+    <script src="js/classement.js?v=<?= time() ?>"></script>
 </body>
+
 </html>

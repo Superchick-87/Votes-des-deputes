@@ -1,299 +1,263 @@
 <?php
-// update.php - VERSION HYBRIDE (WEB & CRON)
-// Détection de l'environnement : CLI (Cron) ou Web
+// update.php - VERSION CORRIGÉE AVEC SIÈGES
 define('IS_CLI', php_sapi_name() === 'cli');
-
-// Configuration pour éviter les timeouts (dans la mesure du possible sur mutualisé)
-set_time_limit(0); 
 ini_set('memory_limit', '2048M');
+set_time_limit(600);
 
 define('MODE_UPDATE', true);
-
-// UTILISATION DE __DIR__ : Indispensable pour que le CRON trouve db.php
 require __DIR__ . '/db.php';
 
-// Fonction de log intelligente
-function logger($msg) { 
-    if (IS_CLI) {
-        // Mode CRON : On nettoie le HTML et on ajoute un saut de ligne texte
-        echo "[" . date('H:i:s') . "] " . strip_tags($msg) . "\n";
-    } else {
-        // Mode WEB : On garde le HTML et on force l'affichage
-        echo "<div>$msg</div>"; 
-        if (ob_get_level() > 0) ob_flush();
-        flush(); 
+$tmpDir = __DIR__ . "/tmp/";
+$step = isset($_GET['step']) ? (int)$_GET['step'] : 0;
+
+// --- FONCTIONS ---
+function viderDossier($dir)
+{
+    if (!is_dir($dir)) return;
+    $files = new RecursiveIteratorIterator(
+        new RecursiveDirectoryIterator($dir, RecursiveDirectoryIterator::SKIP_DOTS),
+        RecursiveIteratorIterator::CHILD_FIRST
+    );
+    foreach ($files as $f) {
+        $f->isDir() ? rmdir($f->getRealPath()) : unlink($f->getRealPath());
     }
 }
 
-// Affichage de l'en-tête HTML seulement si on est sur le Web
-if (!IS_CLI) {
-    echo '<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><title>Mise à jour</title>
-    <style>body{font-family:sans-serif;padding:20px;background:#f4f4f9;color:#333} .log{background:#1e1e1e;color:#0f0;padding:15px;height:600px;overflow-y:scroll;border-radius:5px;font-family:monospace} .step{font-weight:bold;color:#fff;border-top:1px solid #555;margin-top:10px;padding-top:10px;display:block} .success{color:#2ecc71} .warn{color:orange} a.btn{background:#3498db;color:white;padding:15px;text-decoration:none;display:inline-block;border-radius:5px;font-weight:bold;margin-top:20px;}</style></head>
-    <body><h1>🚀 Mise à jour (Correction Groupes)</h1><div class="log">';
-} else {
-    echo "--- DEMARRAGE TACHE CRON ---\n";
-}
-
-$urls = [
-    'acteurs' => "https://data.assemblee-nationale.fr/static/openData/repository/17/amo/tous_acteurs_mandats_organes_xi_legislature/AMO30_tous_acteurs_tous_mandats_tous_organes_historique.xml.zip",
-    'scrutins17' => "https://data.assemblee-nationale.fr/static/openData/repository/17/loi/scrutins/Scrutins.xml.zip",
-    'scrutins16' => "https://data.assemblee-nationale.fr/static/openData/repository/16/loi/scrutins/Scrutins.xml.zip"
-];
-
-// Utilisation de __DIR__ pour garantir que le dossier tmp est créé au bon endroit
-$tmpDir = __DIR__ . "/tmp/";
-
-function downloadAndExtract($url, $destFolder) {
+function downloadAndExtract($url, $destFolder)
+{
     global $tmpDir;
-    if (!is_dir($destFolder)) mkdir($destFolder, 0777, true);
+    if (!is_dir($destFolder)) mkdir($destFolder, 0755, true);
     $zipFile = $tmpDir . "temp_" . uniqid() . ".zip";
-    logger("⬇️ Téléchargement : " . basename($url));
     $fp = fopen($zipFile, 'w+');
-    
+    if (!$fp) return false;
     $ch = curl_init($url);
-    curl_setopt($ch, CURLOPT_TIMEOUT, 600); 
+    curl_setopt($ch, CURLOPT_TIMEOUT, 300);
     curl_setopt($ch, CURLOPT_FILE, $fp);
     curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-    curl_setopt($ch, CURLOPT_USERAGENT, 'Bot/1.0');
-    curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
-    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-    curl_exec($ch);
-    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    curl_setopt($ch, CURLOPT_FAILONERROR, true);
+    $success = curl_exec($ch);
     curl_close($ch);
     fclose($fp);
-    
-    if ($httpCode == 200 && filesize($zipFile) > 10000) {
-        logger("📦 Extraction...");
-        $zip = new ZipArchive;
-        if ($zip->open($zipFile) === TRUE) {
-            $zip->extractTo($destFolder);
-            $zip->close();
-            unlink($zipFile); 
-            return true;
-        }
+    if ($success === false || filesize($zipFile) < 1000) {
+        if (file_exists($zipFile)) unlink($zipFile);
+        return false;
     }
-    logger("<span class='warn'>Échec téléchargement (Code $httpCode).</span>");
+    $zip = new ZipArchive;
+    if ($zip->open($zipFile) === TRUE) {
+        $zip->extractTo($destFolder);
+        $zip->close();
+        unlink($zipFile);
+        return true;
+    }
     return false;
 }
 
-function deplacerContenu($dossierSource, $dossierCible) {
-    if (!is_dir($dossierSource)) return;
-    if (!is_dir($dossierCible)) mkdir($dossierCible, 0777, true);
-    $fichiers = scandir($dossierSource);
-    foreach ($fichiers as $fichier) {
-        if ($fichier === '.' || $fichier === '..') continue;
-        rename($dossierSource . '/' . $fichier, $dossierCible . '/' . $fichier);
-    }
-}
-
-function viderDossier($dossier) {
-    if(!is_dir($dossier)) return;
-    $files = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($dossier, RecursiveDirectoryIterator::SKIP_DOTS), RecursiveIteratorIterator::CHILD_FIRST);
-    foreach($files as $fileinfo) $fileinfo->isDir() ? rmdir($fileinfo->getRealPath()) : unlink($fileinfo->getRealPath());
-    rmdir($dossier);
-}
-
-function determinerTheme($texte) {
-    $t = mb_strtolower($texte, 'UTF-8');
-    if (strpos($t, 'finance') !== false || strpos($t, 'budget') !== false || strpos($t, 'plf') !== false) return '💰 Budget & Finances';
-    if (strpos($t, 'sécurité sociale') !== false || strpos($t, 'retraite') !== false || strpos($t, 'santé') !== false) return '🏥 Social & Santé';
-    if (strpos($t, 'énergie') !== false || strpos($t, 'climat') !== false || strpos($t, 'environnement') !== false) return '🌱 Écologie & Énergie';
-    if (strpos($t, 'constitution') !== false || strpos($t, 'institution') !== false) return '⚖️ Institutions';
-    if (strpos($t, 'justice') !== false || strpos($t, 'police') !== false || strpos($t, 'sécurité') !== false) return '👮 Sécurité & Justice';
-    if (strpos($t, 'éducation') !== false || strpos($t, 'école') !== false) return '🎓 Éducation & Culture';
-    if (strpos($t, 'agriculture') !== false || strpos($t, 'alimentation') !== false) return '🚜 Agriculture';
-    if (strpos($t, 'numérique') !== false || strpos($t, 'internet') !== false) return '💻 Numérique';
-    if (strpos($t, 'europe') !== false || strpos($t, 'international') !== false) return '🌍 International';
-    if (strpos($t, 'logement') !== false || strpos($t, 'immobilier') !== false) return '🏠 Logement';
-    return '📜 Autres'; 
-}
-
-// 1. BASE TEMP
-logger("<span class='step'>1. Préparation de la Base...</span>");
-$pdo->exec("DROP TABLE IF EXISTS votes");
-$pdo->exec("DROP TABLE IF EXISTS scrutins");
-$pdo->exec("DROP TABLE IF EXISTS deputes");
-$pdo->exec("DROP TABLE IF EXISTS groupes");
-
-$pdo->exec("CREATE TABLE groupes (uid TEXT PRIMARY KEY, libelle TEXT, couleur TEXT)");
-$pdo->exec("CREATE TABLE deputes (uid TEXT PRIMARY KEY, nom TEXT, groupe_uid TEXT, photo_url TEXT, departement TEXT, circonscription TEXT, place_hemicycle TEXT, date_naissance DATE, profession TEXT, emails TEXT, twitter TEXT, est_actif INTEGER DEFAULT 0)");
-$pdo->exec("CREATE TABLE scrutins (uid TEXT PRIMARY KEY, numero INTEGER, date_scrutin DATE, titre TEXT, objet TEXT, sort TEXT, pour INTEGER, contre INTEGER, abstention INTEGER, theme TEXT)");
-$pdo->exec("CREATE TABLE votes (id INTEGER PRIMARY KEY AUTOINCREMENT, scrutin_uid TEXT, acteur_uid TEXT, vote TEXT, groupe_uid TEXT)");
-
-$pdo->exec("CREATE INDEX idx_depute_groupe ON deputes(groupe_uid)");
-$pdo->exec("CREATE INDEX idx_vote_scrutin ON votes(scrutin_uid)");
-$pdo->exec("CREATE INDEX idx_depute_actif ON deputes(est_actif)");
-
-// 2. ACTEURS
-logger("<span class='step'>2. Traitement des Acteurs...</span>");
-$dirActeursFinal = $tmpDir . "acteurs/";
-$dirOrganesFinal = $tmpDir . "organe/";
-$dirRawAMO       = $tmpDir . "raw_amo/";
-viderDossier($dirActeursFinal); viderDossier($dirOrganesFinal); viderDossier($dirRawAMO);
-
-if(downloadAndExtract($urls['acteurs'], $dirRawAMO)) {
-    deplacerContenu($dirRawAMO . "xml/acteur", $dirActeursFinal);
-    deplacerContenu($dirRawAMO . "xml/organe", $dirOrganesFinal);
-    viderDossier($dirRawAMO);
-
-    // Groupes
-    $filesOrg = glob($dirOrganesFinal . "*.xml");
-    $stmtGrp = $pdo->prepare("INSERT OR REPLACE INTO groupes (uid, libelle, couleur) VALUES (?, ?, ?)");
-    $pdo->beginTransaction();
-    foreach($filesOrg as $f) {
-        $xml = simplexml_load_file($f);
-        if((string)$xml->codeType === 'GP') {
-            $col = (string)$xml->couleurAssociee ?? '#888';
-            $stmtGrp->execute([(string)$xml->uid, (string)$xml->libelle, $col]);
+function determinerTheme($txt)
+{
+    $t = mb_strtolower($txt, 'UTF-8');
+    $regles = [
+        '💰 Budget' => ['finance', 'budget', 'règlement', 'impôt', 'taxe', 'plfr'],
+        '🏥 Santé' => ['social', 'sante', 'santé', 'hôpital', 'retraite', 'handicap'],
+        '🌱 Écologie' => ['climat', 'énergie', 'environnement', 'eau ', 'nucléaire'],
+        '👮 Sécurité' => ['justice', 'sécurité', 'police', 'immigration', 'pénal'],
+        '🎓 Éducation' => ['éducation', 'école', 'culture', 'sport', 'recherche'],
+        '🚜 Agriculture' => ['agricu', 'pêche', 'alimentation', 'ferme'],
+        '🌍 International' => ['europe', 'international', 'guerre', 'accord'],
+        '🏢 Économie' => ['entreprise', 'travail', 'emploi', 'industrie', 'commerce'],
+        '🏛️ Institutions' => ['constitution', 'institution', 'assemblée', 'vote'],
+        '🏠 Logement' => ['logement', 'immobilier', 'urbanisme']
+    ];
+    foreach ($regles as $theme => $motsCles) {
+        foreach ($motsCles as $mot) {
+            if (strpos($t, $mot) !== false) return $theme;
         }
     }
-    $pdo->commit();
-
-    // Députés
-    $filesAct = glob($dirActeursFinal . "*.xml");
-    $stmtDep = $pdo->prepare("INSERT OR REPLACE INTO deputes (uid, nom, groupe_uid, photo_url, departement, circonscription, place_hemicycle, date_naissance, profession, emails, twitter, est_actif) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-    $pdo->beginTransaction();
-    $countDep = 0;
-    
-    foreach($filesAct as $f) {
-        $xml = simplexml_load_file($f);
-        $uid = (string)$xml->uid;
-        
-        $aEuMandatAssemblee = false;
-        $estActif = 0; 
-        $groupeId = 'NI'; 
-        $departement = ''; $siege = ''; $circo = '';
-        
-        $dateFinMandatRef = '0000-00-00'; 
-        $dateFinRefGroupe = '0000-00-00'; 
-
-        if(isset($xml->mandats->mandat)) {
-            foreach($xml->mandats->mandat as $m) {
-                $type = (string)$m->typeOrgane;
-                $dFin = (string)$m->dateFin;
-                
-                $isMandatEnCours = empty($dFin) || $dFin > date('Y-m-d');
-                if(empty($dFin)) $dFin = '9999-12-31';
-
-                if($type === 'GP') {
-                    if($dFin >= $dateFinRefGroupe) {
-                        $dateFinRefGroupe = $dFin;
-                        $groupeId = (string)$m->organes->organeRef;
-                    }
-                }
-                
-                if($type === 'ASSEMBLEE') {
-                     $aEuMandatAssemblee = true;
-                     if($isMandatEnCours) $estActif = 1;
-
-                     if($dFin >= $dateFinMandatRef) {
-                         $dateFinMandatRef = $dFin;
-                         if(isset($m->election->lieu->departement)) $departement = (string)$m->election->lieu->departement;
-                         if(isset($m->election->lieu->numCirco)) $circo = (string)$m->election->lieu->numCirco . 'e circ.';
-                         if(isset($m->mandature->placeHemicycle)) $siege = (string)$m->mandature->placeHemicycle;
-                     }
-                }
-            }
-        }
-        
-        if(!$aEuMandatAssemblee) continue;
-
-        $prenom = (string)$xml->etatCivil->ident->prenom;
-        $nom = (string)$xml->etatCivil->ident->nom;
-        $dateNais = (string)$xml->etatCivil->infoNaissance->dateNais;
-        $prof = (string)$xml->profession->libelleCourant;
-        $photoUrl = "https://www2.assemblee-nationale.fr/static/tribun/17/photos/" . str_replace('PA', '', $uid) . ".jpg";
-        
-        $emails = []; $twitter = "";
-        if(isset($xml->adresses->adresse)) {
-            foreach($xml->adresses->adresse as $adr) {
-                $type = (string)$adr->typeLibelle;
-                $val = (string)$adr->valElec;
-                if($type === 'Mèl' && !empty($val)) $emails[] = $val;
-                if($type === 'Twitter' && !empty($val)) $twitter = $val;
-            }
-        }
-        $emailsStr = implode(', ', $emails);
-        $nomComplet = str_replace(['Mme ', 'M. '], '', "$prenom $nom");
-        
-        $stmtDep->execute([$uid, $nomComplet, $groupeId, $photoUrl, $departement, $circo, $siege, $dateNais, $prof, $emailsStr, $twitter, $estActif]);
-        $countDep++;
-        if($countDep % 200 == 0) { 
-            // Petit feedback visuel qui marche en CLI et en Web
-            if(!IS_CLI) { echo ". "; flush(); }
-        }
-    }
-    $pdo->commit();
-    logger("✅ $countDep députés importés.");
+    return '📜 Autres';
 }
 
-// 3. SCRUTINS
-logger("<span class='step'>3. Traitement des Scrutins...</span>");
-$dirScrutinsFinal = $tmpDir . "Scrutins/";
-$dirRawScrutins   = $tmpDir . "raw_scrutins/";
-viderDossier($dirScrutinsFinal); viderDossier($dirRawScrutins);
+function determinerType($titre, $objet)
+{
+    $full = mb_strtolower($titre . ' ' . $objet, 'UTF-8');
+    if (strpos($full, 'amendement') !== false) return 'amendement';
+    if (strpos($full, 'ensemble du projet') !== false || strpos($full, 'ensemble de la proposition') !== false) return 'loi';
+    if (strpos($full, 'motion') !== false) return 'motion';
+    if (strpos($full, 'déclaration') !== false) return 'declaration';
+    return 'autre';
+}
 
-$ok17 = downloadAndExtract($urls['scrutins17'], $dirRawScrutins);
-$ok16 = downloadAndExtract($urls['scrutins16'], $dirRawScrutins);
-
-if($ok17 || $ok16) {
-    if(is_dir($dirRawScrutins . "xml/")) deplacerContenu($dirRawScrutins . "xml", $dirScrutinsFinal);
-    else deplacerContenu($dirRawScrutins, $dirScrutinsFinal);
-    viderDossier($dirRawScrutins);
-    $files = glob($dirScrutinsFinal . "*.xml");
-    rsort($files);
-    
-    $stmtScrutin = $pdo->prepare("INSERT OR IGNORE INTO scrutins (uid, numero, date_scrutin, titre, objet, sort, pour, contre, abstention, theme) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-    $stmtVote = $pdo->prepare("INSERT OR IGNORE INTO votes (scrutin_uid, acteur_uid, vote, groupe_uid) VALUES (?, ?, ?, ?)");
-    $pdo->beginTransaction();
-    $count = 0;
-    foreach($files as $file) {
-        $xml = simplexml_load_file($file);
-        if(!$xml) continue;
-        $uidScrutin = (string)$xml->uid;
-        $titreComplet = (string)$xml->titre . ' ' . (string)$xml->objet->libelle;
-        $theme = determinerTheme($titreComplet);
-        $pour = (int)$xml->syntheseVote->decompte->pour;
-        $contre = (int)$xml->syntheseVote->decompte->contre;
-        $abstention = (int)$xml->syntheseVote->decompte->abstentions;
-        $stmtScrutin->execute([$uidScrutin, (int)$xml->numero, (string)$xml->dateScrutin, (string)$xml->titre, (string)$xml->objet->libelle, (string)$xml->sort->code, $pour, $contre, $abstention, $theme]);
-        if(isset($xml->ventilationVotes->organe->groupes->groupe)) {
-            foreach ($xml->ventilationVotes->organe->groupes->groupe as $g) {
-                $gRef = (string)$g->organeRef;
-                $types = ['Pour' => $g->vote->decompteNominatif->pours, 'Contre' => $g->vote->decompteNominatif->contres, 'Abstention' => $g->vote->decompteNominatif->abstentions];
-                foreach($types as $choix => $node) {
-                    if (isset($node->votant)) {
-                        foreach ($node->votant as $v) $stmtVote->execute([$uidScrutin, (string)$v->acteurRef, $choix, $gRef]);
+function importScrutins($leg, $url)
+{
+    global $pdo, $tmpDir;
+    $dirRaw = $tmpDir . "scrutins_$leg/";
+    viderDossier($dirRaw);
+    if (downloadAndExtract($url, $dirRaw)) {
+        $files = is_dir($dirRaw . "xml/") ? glob($dirRaw . "xml/*.xml") : glob($dirRaw . "*.xml");
+        if (count($files) > 0) {
+            $sqlScrutin = "INSERT OR IGNORE INTO scrutins (uid, numero, legislature, date_scrutin, titre, objet, sort, pour, contre, abstention, theme, type_scrutin) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            $stmtS = $pdo->prepare($sqlScrutin);
+            $sqlVote = "INSERT OR IGNORE INTO votes (scrutin_uid, acteur_uid, vote, groupe_uid) VALUES (?, ?, ?, ?)";
+            $stmtV = $pdo->prepare($sqlVote);
+            $pdo->beginTransaction();
+            foreach ($files as $f) {
+                $xml = simplexml_load_file($f);
+                if (!$xml) continue;
+                $uidS = (string)$xml->uid;
+                $stmtS->execute([$uidS, (int)$xml->numero, $leg, (string)$xml->dateScrutin, (string)$xml->titre, (string)$xml->objet->libelle, (string)$xml->sort->code, (int)$xml->syntheseVote->decompte->pour, (int)$xml->syntheseVote->decompte->contre, (int)$xml->syntheseVote->decompte->abstentions, determinerTheme((string)$xml->titre . ' ' . (string)$xml->objet->libelle), determinerType((string)$xml->titre, (string)$xml->objet->libelle)]);
+                if (isset($xml->ventilationVotes->organe->groupes->groupe)) {
+                    foreach ($xml->ventilationVotes->organe->groupes->groupe as $g) {
+                        $gRef = (string)$g->organeRef;
+                        $votes = ['Pour' => $g->vote->decompteNominatif->pours, 'Contre' => $g->vote->decompteNominatif->contres, 'Abstention' => $g->vote->decompteNominatif->abstentions];
+                        foreach ($votes as $choix => $node) {
+                            if (isset($node->votant)) {
+                                foreach ($node->votant as $v) {
+                                    $stmtV->execute([$uidS, (string)$v->acteurRef, $choix, $gRef]);
+                                }
+                            }
+                        }
                     }
                 }
             }
-        }
-        $count++;
-        if($count % 100 == 0) { 
-             if(!IS_CLI) { echo ". "; flush(); }
+            $pdo->commit();
         }
     }
-    $pdo->commit();
-    logger("✅ Scrutins terminés.");
+    viderDossier($dirRaw);
+}
 
-    // 4. SWAP
+// --- AFFICHAGE ---
+if (!IS_CLI && $step == 0) {
+    echo '<h1>🚀 <a href="?step=1">Lancer la Mise à jour</a></h1>';
+    exit;
+}
+if (!IS_CLI && $step > 0 && $step < 6) {
+    echo '<meta http-equiv="refresh" content="1;url=?step=' . ($step + 1) . '" /><h2>Étape ' . $step . ' / 5...</h2>';
+}
+
+// --- ETAPES ---
+if ($step == 1) {
+    $tables = ['votes', 'scrutins', 'deputes', 'groupes', 'stats_deputes', 'stats_groupes'];
+    foreach ($tables as $t) $pdo->exec("DROP TABLE IF EXISTS $t");
+    $pdo->exec("CREATE TABLE groupes (uid TEXT PRIMARY KEY, libelle TEXT, couleur TEXT)");
+    $pdo->exec("CREATE TABLE deputes (uid TEXT PRIMARY KEY, nom TEXT, groupe_uid TEXT, photo_url TEXT, departement TEXT, circonscription TEXT, place_hemicycle TEXT, date_naissance DATE, profession TEXT, est_actif INTEGER)");
+    $pdo->exec("CREATE TABLE scrutins (uid TEXT PRIMARY KEY, numero INTEGER, legislature INTEGER, date_scrutin DATE, titre TEXT, objet TEXT, sort TEXT, pour INTEGER, contre INTEGER, abstention INTEGER, theme TEXT, type_scrutin TEXT)");
+    $pdo->exec("CREATE TABLE votes (id INTEGER PRIMARY KEY AUTOINCREMENT, scrutin_uid TEXT, acteur_uid TEXT, vote TEXT, groupe_uid TEXT)");
+    $pdo->exec("CREATE TABLE stats_deputes (legislature INTEGER, depute_uid TEXT, nb_total INTEGER, nb_loi INTEGER, nb_amendement INTEGER, nb_motion INTEGER, nb_autre INTEGER, PRIMARY KEY(legislature, depute_uid))");
+    $pdo->exec("CREATE TABLE stats_groupes (legislature INTEGER, nom_groupe TEXT, theme TEXT, type_scrutin TEXT, nb_pour INTEGER, nb_contre INTEGER, nb_abs INTEGER, total INTEGER)");
+}
+
+if ($step == 2) {
+    // Import Députés
+    $url = "https://data.assemblee-nationale.fr/static/openData/repository/17/amo/tous_acteurs_mandats_organes_xi_legislature/AMO30_tous_acteurs_tous_mandats_tous_organes_historique.xml.zip";
+    $dirRaw = $tmpDir . "acteurs/";
+    viderDossier($dirRaw);
+    if (downloadAndExtract($url, $dirRaw)) {
+        $stmtG = $pdo->prepare("INSERT OR REPLACE INTO groupes (uid, libelle, couleur) VALUES (?, ?, ?)");
+        $stmtD = $pdo->prepare("INSERT OR REPLACE INTO deputes (uid, nom, groupe_uid, photo_url, departement, circonscription, place_hemicycle, date_naissance, profession, est_actif) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        $pdo->beginTransaction();
+        
+        // 1. Groupes
+        foreach (glob($dirRaw . "xml/organe/*.xml") as $f) {
+            $xml = simplexml_load_file($f);
+            if ((string)$xml->codeType === 'GP') {
+                $stmtG->execute([(string)$xml->uid, (string)$xml->libelle, (string)$xml->couleurAssociee ?? '#888']);
+            }
+        }
+
+        // 2. Acteurs (Députés)
+        foreach (glob($dirRaw . "xml/acteur/*.xml") as $f) {
+            $xml = simplexml_load_file($f);
+            $uid = (string)$xml->uid;
+            $nom = (string)$xml->etatCivil->ident->prenom . " " . (string)$xml->etatCivil->ident->nom;
+            $photo = "https://www2.assemblee-nationale.fr/static/tribun/17/photos/" . substr($uid, 2) . ".jpg";
+            $grp = 'NI';
+            $dept = '';
+            $circo = '';
+            $siege = null; // On initialise à null pour qu'il soit écrasé si trouvé
+            $actif = 0;
+
+            // A. Analyse des mandats
+            if (isset($xml->mandats->mandat)) {
+                $dFinRef = '0000-00-00';
+                foreach ($xml->mandats->mandat as $m) {
+                    $dFin = (string)$m->dateFin;
+                    if (empty($dFin)) $dFin = '9999-12-31';
+
+                    // Groupe politique
+                    if ((string)$m->typeOrgane === 'GP' && $dFin >= $dFinRef) {
+                        $dFinRef = $dFin;
+                        $grp = (string)$m->organes->organeRef;
+                    }
+                    
+                    // Mandat Assemblée
+                    if ((string)$m->typeOrgane === 'ASSEMBLEE') {
+                        if ($dFin > date('Y-m-d')) $actif = 1;
+                        if (isset($m->election->lieu->departement)) $dept = (string)$m->election->lieu->departement;
+                        if (isset($m->election->lieu->numCirco)) $circo = (string)$m->election->lieu->numCirco;
+                        
+                        // --- AJOUT : Récupération place via mandature (Ancienne méthode) ---
+                        if (isset($m->mandature->placeHemicycle) && !empty($m->mandature->placeHemicycle)) {
+                            $siege = (string)$m->mandature->placeHemicycle;
+                        }
+                    }
+                }
+            }
+
+            // B. Sécurité : Si le siège est toujours vide, on regarde le bloc global (Nouvelle méthode)
+            if (empty($siege) && isset($xml->placesHemicycle->placeHemicycle)) {
+                foreach ($xml->placesHemicycle->placeHemicycle as $p) {
+                    $dateFinPlace = (string)$p->dateFin;
+                    // Si pas de date de fin ou date future => Siège actuel
+                    if (empty($dateFinPlace) || $dateFinPlace > date('Y-m-d')) {
+                        $siege = (string)$p->place;
+                        break; 
+                    }
+                }
+            }
+
+            $stmtD->execute([$uid, $nom, $grp, $photo, $dept, $circo, (string)$siege, (string)$xml->etatCivil->infoNaissance->dateNais, (string)$xml->profession->libelleCourant, $actif]);
+        }
+        $pdo->commit();
+    }
+    viderDossier($dirRaw);
+}
+
+if ($step == 3) {
+    importScrutins(16, "https://data.assemblee-nationale.fr/static/openData/repository/16/loi/scrutins/Scrutins.xml.zip");
+}
+if ($step == 4) {
+    importScrutins(17, "https://data.assemblee-nationale.fr/static/openData/repository/17/loi/scrutins/Scrutins.xml.zip");
+}
+
+if ($step == 5) {
+    // Calculs finaux
+    $pdo->exec("INSERT INTO stats_deputes (legislature, depute_uid, nb_total, nb_loi, nb_amendement, nb_motion, nb_autre) 
+                SELECT s.legislature, v.acteur_uid, COUNT(*), SUM(CASE WHEN s.type_scrutin='loi' THEN 1 ELSE 0 END), SUM(CASE WHEN s.type_scrutin='amendement' THEN 1 ELSE 0 END), SUM(CASE WHEN s.type_scrutin='motion' THEN 1 ELSE 0 END), SUM(CASE WHEN s.type_scrutin NOT IN ('loi', 'amendement', 'motion') THEN 1 ELSE 0 END) 
+                FROM votes v JOIN scrutins s ON v.scrutin_uid = s.uid GROUP BY s.legislature, v.acteur_uid");
+
+    $pdo->exec("INSERT INTO stats_groupes (legislature, nom_groupe, theme, type_scrutin, nb_pour, nb_contre, nb_abs, total) 
+                SELECT s.legislature, TRIM(REPLACE(REPLACE(g.libelle, 'Groupe ', ''), ' (NUPES)', '')), s.theme, s.type_scrutin, SUM(CASE WHEN v.vote='Pour' THEN 1 ELSE 0 END), SUM(CASE WHEN v.vote='Contre' THEN 1 ELSE 0 END), SUM(CASE WHEN v.vote='Abstention' THEN 1 ELSE 0 END), COUNT(*) 
+                FROM votes v JOIN scrutins s ON v.scrutin_uid = s.uid JOIN groupes g ON v.groupe_uid = g.uid GROUP BY s.legislature, TRIM(REPLACE(REPLACE(g.libelle, 'Groupe ', ''), ' (NUPES)', '')), s.theme, s.type_scrutin");
+
+    echo "<script>window.location.href='?step=6';</script>";
+}
+
+if ($step == 6) {
+    // 1. On ferme la connexion à la base temporaire
     $pdo = null;
-    // On suppose que $db_file et $temp_file sont définis dans db.php
-    // Si ce n'est pas le cas, assurez-vous de les avoir ou utilisez les noms en dur ci-dessous
-    if(!isset($db_file)) $db_file = __DIR__ . "/assemblee.sqlite"; // fallback
-    if(!isset($temp_file)) $temp_file = __DIR__ . "/assemblee_temp.sqlite"; // fallback
 
-    if (file_exists($db_file)) unlink($db_file);
-    if (file_exists($temp_file) && rename($temp_file, $db_file)) logger("<div class='success'>✅ Mise à jour terminée !</div>");
-    else logger("<div class='warn'>❌ Erreur swap BDD.</div>");
+    // 2. On écrase la base de PROD avec la base TEMP
+    $dbProd = __DIR__ . '/data/assemblee.sqlite';
+    $dbTemp = __DIR__ . '/data/assemblee_temp.sqlite';
 
-} else {
-    logger("<span class='warn'>Aucun scrutin trouvé.</span>");
+    if (file_exists($dbTemp)) {
+        if (!rename($dbTemp, $dbProd)) {
+            if (copy($dbTemp, $dbProd)) {
+                unlink($dbTemp);
+            } else {
+                die("Erreur critique : Impossible de copier la base de données vers le dossier de production.");
+            }
+        }
+        echo "<h1>✅ Terminé ! Base de données mise à jour.</h1><p><a href='classement.php'>Voir le Classement</a></p>";
+    } else {
+        echo "<h1>⚠️ Erreur : Fichier temporaire introuvable.</h1>";
+    }
 }
-
-if (!IS_CLI) {
-    echo '</div><br><a href="index.php" class="btn">Retour Accueil</a></body></html>';
-} else {
-    echo "--- FIN DE TACHE CRON ---\n";
-}
-?>
