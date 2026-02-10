@@ -3,10 +3,41 @@ require 'db.php';
 require 'includes/functions.php';
 
 // --- CHARGEMENT CONFIG & LÉGISLATURES ACTIVES ---
-$config = json_decode(file_get_contents(__DIR__ . '/config.json'), true);
-$lesLegislaturesActives = array_values(array_filter($config['legislatures'], function ($l) {
-    return isset($l['active']) && $l['active'] === true;
-}));
+$configPath = __DIR__ . '/config.json';
+$lesLegislaturesActives = [];
+$defaultLeg = '17';
+
+if (file_exists($configPath)) {
+    $config = json_decode(file_get_contents($configPath), true);
+    $lesLegislaturesActives = array_values(array_filter($config['legislatures'], function ($l) {
+        return isset($l['active']) && $l['active'] === true;
+    }));
+
+    if (!empty($lesLegislaturesActives)) {
+        usort($lesLegislaturesActives, function ($a, $b) {
+            return $b['id'] <=> $a['id'];
+        });
+        $defaultLeg = $lesLegislaturesActives[0]['id'];
+    }
+}
+
+// --- GESTION LÉGISLATURE ---
+$leg = $_GET['leg'] ?? $defaultLeg;
+
+// Sécurité
+$exists = false;
+foreach ($lesLegislaturesActives as $l) {
+    if ($l['id'] == $leg) {
+        $exists = true;
+        break;
+    }
+}
+if (!$exists) $leg = $defaultLeg;
+
+$titreLeg = $leg . 'ème Législature';
+// $colorTheme = ($leg == '16') ? '#e74c3c' : '#27ae60';
+
+// 1. Groupes dispos (Lecture Cache)
 
 // On définit la législature par défaut comme étant la première du JSON (souvent la plus récente)
 $defaultLeg = !empty($lesLegislaturesActives) ? $lesLegislaturesActives[0]['id'] : '17';

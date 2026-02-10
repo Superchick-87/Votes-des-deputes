@@ -4,16 +4,39 @@ require 'includes/functions.php';
 ini_set('max_execution_time', 60);
 
 // --- CHARGEMENT CONFIG & LÉGISLATURES ACTIVES ---
-$config = json_decode(file_get_contents(__DIR__ . '/config.json'), true);
-$lesLegislaturesActives = array_values(array_filter($config['legislatures'], function ($l) {
-    return isset($l['active']) && $l['active'] === true;
-}));
+$configPath = __DIR__ . '/config.json';
+$lesLegislaturesActives = [];
+$defaultLeg = '17';
 
-// On définit la législature par défaut comme étant la première du JSON (souvent la plus récente)
-$defaultLeg = !empty($lesLegislaturesActives) ? $lesLegislaturesActives[0]['id'] : '17';
+if (file_exists($configPath)) {
+    $config = json_decode(file_get_contents($configPath), true);
+    $lesLegislaturesActives = array_values(array_filter($config['legislatures'], function ($l) {
+        return isset($l['active']) && $l['active'] === true;
+    }));
+
+    if (!empty($lesLegislaturesActives)) {
+        // Trier pour avoir la plus récente en premier
+        usort($lesLegislaturesActives, function ($a, $b) {
+            return $b['id'] <=> $a['id'];
+        });
+        $defaultLeg = $lesLegislaturesActives[0]['id'];
+    }
+}
 
 // --- GESTION DES PARAMÈTRES ---
 $leg = $_GET['leg'] ?? $defaultLeg;
+
+// Sécurité : si la leg demandée est inactive, on prend la par défaut
+$exists = false;
+foreach ($lesLegislaturesActives as $l) {
+    if ($l['id'] == $leg) {
+        $exists = true;
+        break;
+    }
+}
+if (!$exists) $leg = $defaultLeg;
+
+// $colorTheme = ($leg == '16') ? '#e74c3c' : '#27ae60';
 
 // 1. RÉCUPÉRATION DES TOTAUX
 $sqlCounts = "SELECT 
