@@ -81,3 +81,54 @@
 [2026-02-10 17:26:37] Calcul des statistiques finales...
 [2026-02-10 17:26:47] SUCCÈS : Base de données mise à jour.
 [2026-02-10 17:26:47] --- FIN DE TÂCHE RÉUSSIE ---
+[2026-02-11 01:00:02] --- LANCEMENT TÂCHE AUTOMATIQUE (CLI) ---
+[2026-02-11 01:00:02] Début de l'étape 1 / 5
+[2026-02-11 01:00:02] Tables réinitialisées.
+[2026-02-11 01:00:02] Début de l'étape 2 / 5
+[2026-02-11 01:00:07] Import Acteurs terminé.
+[2026-02-11 01:00:07] Début de l'étape 3 / 5
+[2026-02-11 01:00:07] Importation des scrutins - Législature 16
+[2026-02-11 01:00:18] Début de l'étape 4 / 5
+[2026-02-11 01:00:18] Importation des scrutins - Législature 17
+[2026-02-11 01:00:29] Début de l'étape 5 / 5
+[2026-02-11 01:00:29] Calcul des statistiques finales...
+[2026-02-11 01:00:32] --- LANCEMENT TÂCHE AUTOMATIQUE (CLI) ---
+[2026-02-11 01:00:32] Début de l'étape 1 / 5
+[2026-02-11 01:00:32] Tables réinitialisées.
+[2026-02-11 01:00:32] Début de l'étape 2 / 5
+[2026-02-11 01:00:39] SUCCÈS : Base de données mise à jour.
+[2026-02-11 01:00:39] --- FIN DE TÂCHE RÉUSSIE ---
+[2026-02-11 01:00:40] Import Acteurs terminé.
+[2026-02-11 01:00:40] Début de l'étape 3 / 5
+[2026-02-11 01:00:40] Importation des scrutins - Législature 16
+[2026-02-11 01:00:54] Début de l'étape 4 / 5
+[2026-02-11 01:00:54] Importation des scrutins - Législature 17
+[2026-02-11 01:01:05] Début de l'étape 5 / 5
+[2026-02-11 01:01:05] Calcul des statistiques finales...
+[2026-02-11 01:01:14] --- FIN DE TÂCHE RÉUSSIE ---
+[2026-02-12 01:00:04] --- LANCEMENT TÂCHE AUTOMATIQUE (CLI) ---
+[2026-02-12 01:00:04] Début de l'étape 1 / 5
+[2026-02-12 01:00:04] Tables réinitialisées.
+[2026-02-12 01:00:04] Début de l'étape 2 / 5
+[2026-02-12 01:00:09] Import Acteurs terminé.
+[2026-02-12 01:00:09] Début de l'étape 3 / 5
+[2026-02-12 01:00:09] Importation des scrutins - Législature 16
+[2026-02-12 01:00:21] Début de l'étape 4 / 5
+[2026-02-12 01:00:21] Importation des scrutins - Législature 17
+[2026-02-12 01:00:36] Début de l'étape 5 / 5
+[2026-02-12 01:00:36] Calcul des statistiques finales...
+[2026-02-12 01:00:46] SUCCÈS : Base de données mise à jour.
+[2026-02-12 01:00:46] --- FIN DE TÂCHE RÉUSSIE ---
+[2026-02-12 01:00:46] --- LANCEMENT TÂCHE AUTOMATIQUE (CLI) ---
+[2026-02-12 01:00:46] Début de l'étape 1 / 5
+[2026-02-12 01:00:46] Tables réinitialisées.
+[2026-02-12 01:00:46] Début de l'étape 2 / 5
+[2026-02-12 01:00:51] Import Acteurs terminé.
+[2026-02-12 01:00:51] Début de l'étape 3 / 5
+[2026-02-12 01:00:51] Importation des scrutins - Législature 16
+[2026-02-12 01:01:01] Début de l'étape 4 / 5
+[2026-02-12 01:01:01] Importation des scrutins - Législature 17
+[2026-02-12 01:01:11] Début de l'étape 5 / 5
+[2026-02-12 01:01:11] Calcul des statistiques finales...
+[2026-02-12 01:01:21] SUCCÈS : Base de données mise à jour.
+[2026-02-12 01:01:21] --- FIN DE TÂCHE RÉUSSIE ---
